@@ -5,6 +5,7 @@ These are the dofiles I use on Mac OS.
 Since we are changing the deafult location of .zshrc and .vimrc, we need to use symlinks:
 - `ln -s ~/dotfiles/.zshrc ~/.zshrc`
 - `ln -s ~/dotfiles/.vimrc ~/.vimrc`
+- `ln -s ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua`
 
 # Zshell
 
