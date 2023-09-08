@@ -2,8 +2,9 @@
 
 These are the dofiles I use on Mac OS.
 
-`ln -s ~/dotfiles/.zshrc ~/.zshrc`
-`ln -s ~/dotfiles/.vimrc ~/.vimrc`
+Since we are changing the deafult location of .zshrc and .vimrc, we need to use symlinks:
+- `ln -s ~/dotfiles/.zshrc ~/.zshrc`
+- `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 
 # Zshell
 
@@ -46,10 +47,10 @@ I installed via `brew install neovim`
 
 My inital neovim configuration was copy and pasted from here: https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 
-mkdir -p ~/.config/nvim
-cd .config/nvim
-nvim init.lua
-Copy and paste kickstart.nvim into init.lua
+- mkdir -p ~/.config/nvim
+- cd .config/nvim
+- nvim init.lua
+- Copy and paste kickstart.nvim into init.lua
 
 - This config uses lazy.nvim for package management. To delete and reinstall everything follow the below steps and then reopen neovim:
 
