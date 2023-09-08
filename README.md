@@ -2,15 +2,16 @@
 
 These are the dofiles I use on Mac OS.
 
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.vimrc ~/.vimrc
+`ln -s ~/dotfiles/.zshrc ~/.zshrc`
+`ln -s ~/dotfiles/.vimrc ~/.vimrc`
 
-# Zshell Set up
+# Zshell
+
+## Setup
 
 If you keep your zshrc somewhere other than your home directory (~), then you wil have to use a symlink. For example, I store my dot files in ~/dotfiles.
 
 When you restart your terminal, you should see your Zshr configured properly
-
 
 ## Oh My ZSH
 
@@ -30,11 +31,30 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 mkdir -p ~/.vim/pack/plugins/start
 clone the plugin you want, into that directory
-    git clone https://github.com/franbach/miramare.git ~/.vim/pack/plugins/start/miramare
-    git clone https://github.com/franbach/miramare.git ~/.vim/pack/plugins/start/miramare
-    git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/plugins/start/nerdtree
-    git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/plugins/start/vim-airline
-    git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/plugins/start/vim-airline-themes
-    git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+    `git clone https://github.com/franbach/miramare.git ~/.vim/pack/plugins/start/miramare`
+    `git clone https://github.com/franbach/miramare.git ~/.vim/pack/plugins/start/miramare`
+    `git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/plugins/start/nerdtree`
+    `git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/plugins/start/vim-airline`
+    `git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/plugins/start/vim-airline-themes`
+    `git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go`
 
+# Neovim
 
+[Installation Instructions](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+
+I installed via `brew install neovim`
+
+My inital neovim configuration was copy and pasted from here: https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+
+mkdir -p ~/.config/nvim
+cd .config/nvim
+nvim init.lua
+Copy and paste kickstart.nvim into init.lua
+
+- This config uses lazy.nvim for package management. To delete and reinstall everything follow the below steps and then reopen neovim:
+
+To uninstall lazy.nvim and its associated package data, you need to remove the following files and directories:
+
+    - data: ~/.local/share/nvim/lazy
+    - state: ~/.local/state/nvim/lazy
+    - lockfile: ~/.config/nvim/lazy-lock.json
