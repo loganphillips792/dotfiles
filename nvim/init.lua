@@ -142,14 +142,15 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  -- {
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
+  { "ellisonleao/gruvbox.nvim", priority = 1000 },
 
   {
     -- Set lualine as statusline
@@ -209,6 +210,33 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  { "ellisonleao/gruvbox.nvim", priority = 1000 },
+
+  -- -- setup must be called before loading the colorscheme
+  -- -- Default options:
+  -- require("gruvbox").setup({
+  --   undercurl = true,
+  --   underline = true,
+  --   bold = true,
+  --   italic = {
+  --     strings = true,
+  --     comments = true,
+  --     operators = false,
+  --     folds = true,
+  --   },
+  --   strikethrough = true,
+  --   invert_selection = false,
+  --   invert_signs = false,
+  --   invert_tabline = false,
+  --   invert_intend_guides = false,
+  --   inverse = true, -- invert background for search, diffs, statuslines and errors
+  --   contrast = "", -- can be "hard", "soft" or empty string
+  --   palette_overrides = {},
+  --   overrides = {},
+  --   dim_inactive = false,
+  --   transparent_mode = false,
+  -- })
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -264,6 +292,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+vim.cmd("colorscheme gruvbox")
 
 -- [[ Basic Keymaps ]]
 

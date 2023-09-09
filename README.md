@@ -60,3 +60,17 @@ To uninstall lazy.nvim and its associated package data, you need to remove the f
     - data: ~/.local/share/nvim/lazy
     - state: ~/.local/state/nvim/lazy
     - lockfile: ~/.config/nvim/lazy-lock.json
+
+- lazy.nvim - Pluigin manager
+- Mason - Installers for LSP, Formatters, Linters, and etc.
+
+
+
+- Mason
+    - installs packages to `~/.local/share/nvim/mason`
+    - MasonInstall autopep8
+    - MasonUninstall autopep8
+- Telescope
+    :Telescope help_tags
+    :Telescope builtin
+    :Telescope keymaps
