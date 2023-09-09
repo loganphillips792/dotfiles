@@ -65,6 +65,8 @@ To uninstall lazy.nvim and its associated package data, you need to remove the f
 - Mason - Installers for LSP, Formatters, Linters, and etc.
 
 
+When typing commands (:) start typing and hit <tab> to get auto sugestions
+
 
 - Mason
     - installs packages to `~/.local/share/nvim/mason`
@@ -74,3 +76,6 @@ To uninstall lazy.nvim and its associated package data, you need to remove the f
     :Telescope help_tags
     :Telescope builtin
     :Telescope keymaps
+- nvim-tree (:h nvim-tree) Docs located [here](https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L1508)
+    :NvimTreeToggle
+    :NvimTreeCollapse
