@@ -222,6 +222,10 @@ require('lazy').setup({
     config = function()
       require("nvim-tree").setup {}
     end,
+  },
+
+  {
+    "NvChad/nvim-colorizer.lua",
   }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -322,6 +326,9 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+-- For NvChad/nvim-colorize
+require("colorizer").setup()
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
