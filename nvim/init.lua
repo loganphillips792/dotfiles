@@ -226,6 +226,12 @@ require('lazy').setup({
 
   {
     "NvChad/nvim-colorizer.lua",
+  },
+
+  -- https://github.com/Exafunction/codeium.vim
+  -- Need to run :Codeium Auth after installation to finish set up
+  {
+    "Exafunction/codeium.vim",
   }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
