@@ -12,6 +12,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 # Plugins
+
+# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
 source ~/zshrc-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
 
 # Set name of the theme to load --- if set to "random", it will
