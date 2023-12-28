@@ -19,16 +19,14 @@ When you restart your terminal, you should see your Zshr configured properly
 
 [Repo Link](https://github.com/ohmyzsh/ohmyzsh/)
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    Installs at ~/.oh-my-zsh
-    ls ~/.oh-my-zsh
+- sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    - Installs at ~/.oh-my-zsh
+    - ls ~/.oh-my-zsh
     
-themes located at .oh-my-zsh/themes
-Any plugins from oh-my-zsh you want to use, add to the plugins=() variable
-
-Zshell plugins: I created a folder `~/zshrc-plugins` and this is where I `git clone` plugins into.
-
-I am currently using powerlevel10k theme. View the installation instructions [here](https://github.com/romkatv/powerlevel10k#oh-my-zsh). I followed the instructions for 'Oh My ZSH'. It will take you through the "configuration wizard" in order to configure the theme. Ultimtately installs the configuration at ~/.pk10.zsh. Note, this also uses the "Meslo Nerd Font". View the repo to install this font.
+- themes located at .oh-my-zsh/themes
+- Any plugins from oh-my-zsh you want to use, add to the plugins=() variable
+- Zshell plugins: I created a folder `~/zshrc-plugins` and this is where I `git clone` plugins into.
+- I am currently using powerlevel10k theme. View the installation instructions [here](https://github.com/romkatv/powerlevel10k#oh-my-zsh). I followed the instructions for 'Oh My ZSH'. It will take you through the "configuration wizard" in order to configure the theme. Ultimtately installs the configuration at ~/.pk10.zsh. Note, this also uses the "Meslo Nerd Font". View the repo to install this font.
 
 
 # Vim
