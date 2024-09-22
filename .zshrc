@@ -116,6 +116,8 @@ source $ZSH/oh-my-zsh.sh
 alias gs="git status"
 alias ga="git add ."
 
+alias oz="open ~/.zshrc"
+
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
