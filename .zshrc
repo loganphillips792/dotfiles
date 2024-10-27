@@ -116,6 +116,13 @@ source $ZSH/oh-my-zsh.sh
 alias gs="git status"
 alias ga="git add ."
 
+acp(){
+	git add .
+	git commit -m "wip"
+	git push
+}
+
+
 alias oz="open ~/.zshrc"
 
 eval $(/opt/homebrew/bin/brew shellenv)
