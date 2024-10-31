@@ -119,14 +119,14 @@ alias ga="git add ."
 acp(){
 	# Check the current branch name
 	current_branch=$(git rev-parse --abbrev-ref HEAD)
-
+	echo $current_branch
 	if [ "$current_branch" = "main" ]; then
 		echo "Warning: You are on the 'main' branch, Aborting add, commit, and push"
 		return 1
 	fi
 
 	git add .
-	git commit -m "wip"
+	# git commit -m "wip"
 
 	# Try pushing the branch normally
 	# The 2>&1 part redirects any error messages (from stderr) to stdout, so both normal output and error messages can be processed by grep
@@ -134,9 +134,9 @@ acp(){
 	if git push 2>&1 | grep -q "fatal: The current branch $current_branch has no upstream branch"; then
         # If the branch has no upstream, push with --set-upstream
         echo "Setting upstream and pushing..."
-        git push --set-upstream origin "$current_branch"
+        # git push --set-upstream origin "$current_branch"
     else
-		git push
+		# git push
     fi
 	echo "Pushed successfully."
 }
