@@ -121,7 +121,7 @@ acp(){
 	current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 	if [ "$current_branch" = "main" ]; then
-		echo "Warning: You are on the 'main' branch, Aborting add, commit, and push
+		echo "Warning: You are on the 'main' branch, Aborting add, commit, and push"
 		return 1
 	fi
 
