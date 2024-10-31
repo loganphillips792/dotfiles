@@ -118,7 +118,7 @@ alias ga="git add ."
 
 acp(){
 	# Check the current branch name
-	current_branch=$(git rev-parse --abrev-ref HEAD)
+	current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 	if [ "$current_branch" = "main" ]; then
 		echo "Warning: You are on the 'main' branch, Aborting add, commit, and push
