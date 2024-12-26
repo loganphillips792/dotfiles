@@ -1,11 +1,17 @@
 return {
-  {
-    "folke/tokyonight.nvim",
+  --[=[{
+  "folke/tokyonight.nvim",
     lazy = false,
     priority=1000,
     opts = { style = "moon" },
     config = function()
       vim.cmd([[colorscheme tokyonight]])
+    end
+  }]=]
+  {
+    "franbach/miramare",
+    config = function()
+      vim.cmd([[colorscheme miramare]])
     end
   }
 }
