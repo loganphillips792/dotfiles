@@ -9,6 +9,10 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 
 # Zshell
 
+`zsh --version`
+
+`echo $SHELL`
+
 ## Setup
 
 If you keep your zshrc somewhere other than your home directory (~), then you wil have to use a symlink. For example, I store my dot files in ~/dotfiles.
@@ -19,11 +23,12 @@ When you restart your terminal, you should see your Zshr configured properly
 
 [Repo Link](https://github.com/ohmyzsh/ohmyzsh/)
 
-- sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+- `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
     - Installs at ~/.oh-my-zsh
     - ls ~/.oh-my-zsh
-    
 - themes located at .oh-my-zsh/themes
+    - for example: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k` (`p10k configure` if configuration wizard does not open after restart)
+
 - Any plugins from oh-my-zsh you want to use, add to the plugins=() variable
 - Zshell plugins: I created a folder `~/zshrc-plugins` and this is where I `git clone` plugins into.
 - I am currently using powerlevel10k theme. View the installation instructions [here](https://github.com/romkatv/powerlevel10k#oh-my-zsh). I followed the instructions for 'Oh My ZSH'. It will take you through the "configuration wizard" in order to configure the theme. Ultimtately installs the configuration at ~/.pk10.zsh. Note, this also uses the "Meslo Nerd Font". View the repo to install this font.
