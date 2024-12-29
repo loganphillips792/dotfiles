@@ -6,6 +6,7 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/.zshrc ~/.zshrc` (Now, editing ~/dotfiles/.zshrc will update ~/.zshrc as well)
 - `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 - `ln -s ~/dotfiles/nvim ~/.config/nvim`
+- `ln -s ~/dotfiles/wezterm-config/.wezterm.lua ~/.wezterm.lua`
 
 # Zshell
 
