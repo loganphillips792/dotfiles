@@ -85,6 +85,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git z)
 
+# adding it as a regular Oh My ZSH! plugin will not work properly
+export PATH="~/zshrc-plugins/zsh-autocomplete/src:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
