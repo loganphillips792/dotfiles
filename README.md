@@ -40,6 +40,10 @@ Note: You can't add it as a regular oh-my-zsh plugin. Read more here: https://gi
 
 https://github.com/marlonrichert/zsh-autocomplete?tab=readme-ov-file#keyboard-shortcuts
 
+### z
+ - Enables the use of the z command, which is a tool for jumping to frequently used directories quickly. It keeps track of directories you visit and allows you to navigate to them by typing part of the directory name.
+ - Example: If you've visited /usr/local/bin often, typing z bin would quickly take you there.
+
 # Vim
 
 mkdir -p ~/.vim/pack/plugins/start
