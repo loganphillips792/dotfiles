@@ -106,7 +106,14 @@ return {
       end,
       ["gopls"] = function()
         lspconfig["gopls"].setup({
-            capabilities = capabilities
+            capabilities = capabilities,
+            --[[
+            settings = {
+              gopls = {
+                gofumpt = true
+              }
+            }
+            --]]
         })
       end,
       ["html"] = function()

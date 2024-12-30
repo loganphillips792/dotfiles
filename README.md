@@ -94,3 +94,10 @@ When typing commands (:) start typing and hit <tab> to get auto sugestions
 - nvim-tree (:h nvim-tree) Docs located [here](https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L1508)
     :NvimTreeToggle
     :NvimTreeCollapse
+
+
+# TODO
+
+## Null ls
+
+https://www.josean.com/posts/neovim-linting-and-formatting
