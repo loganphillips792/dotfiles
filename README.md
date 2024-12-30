@@ -86,11 +86,7 @@ When typing commands (:) start typing and hit <tab> to get auto sugestions
 - Mason
     - installs packages to `~/.local/share/nvim/mason`
     - MasonInstall autopep8
-    - MasonUninstall autopep8
-- Telescope
-    :Telescope help_tags
-    :Telescope builtin
-    :Telescope keymaps
+    - MasonUninstall autopep8    
 - nvim-tree (:h nvim-tree) Docs located [here](https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L1508)
     :NvimTreeToggle
     :NvimTreeCollapse
