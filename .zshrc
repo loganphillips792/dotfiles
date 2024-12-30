@@ -158,3 +158,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/logan/.cache/lm-studio/bin"
+
+# Add Go binaries to PATH
+export PATH=$PATH:$(go env GOPATH)/bin
