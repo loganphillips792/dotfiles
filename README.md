@@ -94,6 +94,20 @@ When typing commands (:) start typing and hit <tab> to get auto sugestions
 
 # TODO
 
+https://github.com/LunarVim/Neovim-from-scratch/blob/02-keymaps/lua/user/keymaps.lua
+
+## keybinds custom 
+
+https://github.com/ray-x/nvim/blob/a1dbd320fd693a9c9c62041eb062dbe2a16ce939/lua/core/commands.lua#L113
+
+
+
 ## Null ls
 
 https://www.josean.com/posts/neovim-linting-and-formatting
+
+https://www.youtube.com/watch?v=i04sSQjd-qo 7:12
+
+## Wez term config
+
+https://github.com/KevinSilvester/wezterm-config?tab=readme-ov-file
