@@ -1,0 +1,62 @@
+{
+    // "workbench.colorTheme": "Panda Syntax",
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#068CEE",
+        "editor.background": "#000000",
+        "editor.foreground": "#3ABEFF",
+        "sideBarTitle.foreground": "#ff0000",
+        "sideBar.background": "#5A5A66",
+        "sideBar.foreground": "#A2D04A",
+        "textCodeQuote.border": "#ff0000",
+        "editorLineNumber.foreground": "#A3C4BC",
+        "editorCursor.foreground": "#fdfdfd",
+        "editor.selectionBackground": "#566E3D",
+        "list.activeSelectionBackground": "#3ABEFF", // selected item in the file explorer
+        // "list.inactiveSelectionBackground": "#3ABEFF",
+        "list.inactiveFocusBackground": "#A2D04A",
+        "list.hoverBackground": "#75706f",
+        "list.hoverForeground": "#3ABEFF",
+        "panel.background": "#564343",
+        "panelTitle.activeForeground": "#FFF",
+    }, "editor.tokenColorCustomizations": {
+        "comments": "#A2D04A",
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.color": "#42a5f5",
+    "material-icon-theme.activeIconPack": "react",
+    "liveServer.settings.ignoreFiles":["**"],
+    "python.defaultInterpreterPath": "/Users/logan/Desktop/CustomBlog/bin/python",
+    "tabnine.experimentalAutoImports": true,
+    "workbench.colorTheme": "Hack The Box",
+    "redhat.telemetry.enabled": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "explorer.compactFolders": false,
+    "prettier.requireConfig": true,
+    "[go]": {
+        "editor.formatOnSave": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never"
+        }
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[templ]": {
+        "editor.defaultFormatter": "a-h.templ" // activate formatting .templ files on save with the templ plugin
+    },
+    "tailwindCSS.includeLanguages": { // enable autocompletion for Tailwind CSS in .templ files
+        "templ": "html"
+    },
+    "go.formatTool": "gofumpt",
+    "editor.tabSize": 4,
+    "terminal.integrated.scrollback": 10000,
+    "debug.javascript.autoAttachFilter": "disabled",
+    "editor.guides.bracketPairs": true
+}
