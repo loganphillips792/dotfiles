@@ -46,7 +46,7 @@
     "[javascript]": {
         "editor.formatOnSave": true,
         "editor.maxTokenizationLineLength": 2500,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[templ]": {
         "editor.defaultFormatter": "a-h.templ" // activate formatting .templ files on save with the templ plugin
