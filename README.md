@@ -7,6 +7,9 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/.vimrc ~/.vimrc`
 - `ln -s ~/dotfiles/nvim ~/.config/nvim`
 - `ln -s ~/dotfiles/wezterm-config/.wezterm.lua ~/.wezterm.lua`
+- `ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`
+- `ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json`
+- `ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
 
 # Zshell
 
@@ -39,6 +42,13 @@ When you restart your terminal, you should see your Zshr configured properly
 Note: You can't add it as a regular oh-my-zsh plugin. Read more here: https://github.com/marlonrichert/zsh-autocomplete?tab=readme-ov-file#keyboard-shortcuts
 
 https://github.com/marlonrichert/zsh-autocomplete?tab=readme-ov-file#keyboard-shortcuts
+
+### Zsh Syntax Highlighting
+
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
 
 ### z
  - Enables the use of the z command, which is a tool for jumping to frequently used directories quickly. It keeps track of directories you visit and allows you to navigate to them by typing part of the directory name.
@@ -93,9 +103,9 @@ When typing commands (:) start typing and hit <tab> to get auto sugestions
 
 # VS Code
 
-`ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json`
-`ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json`
+# Neofetch
 
+`brew install neofetch`
 
 # TODO
 
