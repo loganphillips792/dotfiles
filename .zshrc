@@ -145,7 +145,7 @@ acp(){
 }
 
 
-alias oz="open ~/.zshrc"
+alias oz="nvim ~/.zshrc"
 
 eval $(/opt/homebrew/bin/brew shellenv)
 
