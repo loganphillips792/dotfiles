@@ -83,7 +83,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
+plugins=(git z zsh-syntax-highlighting)
 
 # adding it as a regular Oh My ZSH! plugin will not work properly
 export PATH="~/zshrc-plugins/zsh-autocomplete/src:$PATH"
