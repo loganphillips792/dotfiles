@@ -158,3 +158,7 @@ indent
 https://www.youtube.com/watch?v=H70lULWJeig
 
 https://www.youtube.com/watch?v=wNQpDWLs4To
+
+# more wezterm stuff
+
+https://www.reddit.com/r/neovim/comments/1edd9yj/my_favorite_terminal_setup_for_neovim_wezterm/
