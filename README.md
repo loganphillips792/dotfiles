@@ -161,6 +161,11 @@ https://github.com/davidbasilefilho/basile.nvim
 
 https://github.com/davidbasilefilho/basile.nvim/blob/master/lua/custom/plugins/zen-mode.lua
 
+## Avante
+
+https://github.com/yetone/avante.nvim
+
+
 ## tmux
 
 https://www.youtube.com/watch?v=H70lULWJeig
