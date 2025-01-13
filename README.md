@@ -151,7 +151,15 @@ https://github.com/L3MON4D3/LuaSnip
 
 https://github.com/folke/snacks.nvim
 
-indent 
+indent
+
+## Basile
+
+https://github.com/davidbasilefilho/basile.nvim
+
+## Zen Mode
+
+https://github.com/davidbasilefilho/basile.nvim/blob/master/lua/custom/plugins/zen-mode.lua
 
 ## tmux
 
