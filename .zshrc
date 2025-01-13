@@ -161,3 +161,8 @@ export PATH="$PATH:/Users/logan/.cache/lm-studio/bin"
 
 # Add Go binaries to PATH
 export PATH=$PATH:$(go env GOPATH)/bin
+
+# Add pyenv to PATH
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
