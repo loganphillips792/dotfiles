@@ -165,6 +165,15 @@ https://github.com/davidbasilefilho/basile.nvim/blob/master/lua/custom/plugins/z
 
 https://github.com/yetone/avante.nvim
 
+## alpha
+
+https://github.com/goolord/alpha-nvim/discussions/16#discussioncomment-1309233
+
+
+NEOVIM Bloody https://patorjk.com/software/taag/#p=display&v=0&f=Bloody&t=NEOVIM
+
+
+
 
 ## tmux
 

@@ -58,5 +58,8 @@
     "editor.tabSize": 4,
     "terminal.integrated.scrollback": 10000,
     "debug.javascript.autoAttachFilter": "disabled",
-    "editor.guides.bracketPairs": true
+    "editor.guides.bracketPairs": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
