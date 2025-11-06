@@ -1,6 +1,7 @@
 {
     // "workbench.colorTheme": "Panda Syntax",
     "workbench.colorCustomizations": {
+        /*
         "titleBar.activeBackground": "#068CEE",
         "editor.background": "#000000",
         "editor.foreground": "#3ABEFF",
@@ -12,12 +13,13 @@
         "editorCursor.foreground": "#fdfdfd",
         "editor.selectionBackground": "#566E3D",
         "list.activeSelectionBackground": "#3ABEFF", // selected item in the file explorer
-        // "list.inactiveSelectionBackground": "#3ABEFF",
+        "list.inactiveSelectionBackground": "#3ABEFF",
         "list.inactiveFocusBackground": "#A2D04A",
         "list.hoverBackground": "#75706f",
         "list.hoverForeground": "#3ABEFF",
         "panel.background": "#564343",
         "panelTitle.activeForeground": "#FFF",
+        */
     }, "editor.tokenColorCustomizations": {
         "comments": "#A2D04A",
     },
@@ -27,7 +29,7 @@
     "material-icon-theme.folders.color": "#42a5f5",
     "material-icon-theme.activeIconPack": "react",
     "liveServer.settings.ignoreFiles":["**"],
-    "python.defaultInterpreterPath": "/Users/logan/Desktop/CustomBlog/bin/python",
+    "python.defaultInterpreterPath": "/Users/logan/Desktop/LiveAuction/bin/python",
     "tabnine.experimentalAutoImports": true,
     "workbench.colorTheme": "Hack The Box",
     "redhat.telemetry.enabled": true,
@@ -38,7 +40,7 @@
     "explorer.compactFolders": false,
     "prettier.requireConfig": true,
     "[go]": {
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "never"
         }
@@ -61,5 +63,32 @@
     "editor.guides.bracketPairs": true,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "roo-cline.allowedCommands": [
+        "npm test",
+        "npm install",
+        "tsc",
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "roo-cline.deniedCommands": [],
+    "yaml.schemas": {
+        "file:///Users/logan/.vscode/extensions/continue.continue-1.2.10-darwin-arm64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
+    },
+    "gopls": {
+        "ui.semanticTokens": true
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     }
 }
