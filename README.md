@@ -105,6 +105,9 @@ When typing commands (:) start typing and hit <tab> to get auto sugestions
     :NvimTreeToggle
     :NvimTreeCollapse
 
+- lazy.nvim
+    - `:Lazy check`
+    - `:Lazy update`
 # VS Code
 
 # Neofetch
