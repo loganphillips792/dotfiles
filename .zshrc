@@ -144,6 +144,19 @@ acp(){
 	echo "Pushed successfully."
 }
 
+# usage: on a feature branch, run rebasewithmain "commit message"
+rebasewithmain() {
+  local message="$1"
+  
+  if [[ -z "$message" ]]; then
+    echo "Usage: rebasewithmain \"commit message\""
+    return 1
+  fi
+  
+  git fetch origin main || return 1
+  git reset --soft origin/main || return 1
+  git commit -m "$message"
+}
 
 alias oz="nvim ~/.zshrc"
 
