@@ -179,3 +179,5 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+# for claude code - ~/.local/bin/claude
+export PATH="$HOME/.local/bin:$PATH"
