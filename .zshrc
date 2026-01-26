@@ -144,18 +144,32 @@ acp(){
 	echo "Pushed successfully."
 }
 
-# usage: on a feature branch, run rebasewithmain "commit message"
+# usage: rebasewithmain [-p] "commit message"
+# -p: force push after rebasing
 rebasewithmain() {
+  local push_flag=false
+  local OPTIND opt
+
+  while getopts "p" opt; do
+    case "$opt" in
+      p) push_flag=true ;;
+    esac
+  done
+  shift $((OPTIND - 1))
+
   local message="$1"
-  
   if [[ -z "$message" ]]; then
-    echo "Usage: rebasewithmain \"commit message\""
+    echo "Usage: rebasewithmain [-p] \"commit message\""
     return 1
   fi
-  
+
   git fetch origin main || return 1
   git reset --soft origin/main || return 1
-  git commit -m "$message"
+  git commit -m "$message" || return 1
+
+  if [[ "$push_flag" == true ]]; then
+    git push --force
+  fi
 }
 
 alias oz="nvim ~/.zshrc"
