@@ -195,3 +195,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 # for claude code - ~/.local/bin/claude
 export PATH="$HOME/.local/bin:$PATH"
+
+# Add wezterm command to $PATH. So we can run wezterm instead of /Applications/WezTerm.app/Contents/MacOS/wezterm ls-fonts
+export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
