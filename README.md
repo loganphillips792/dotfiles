@@ -140,6 +140,7 @@ https://github.com/KevinSilvester/wezterm-config?tab=readme-ov-file
 - Switch tabs
     - Super + Shift + [ to go to the previous tab and Super + Shift + ] for the next tab
 - Close current tab: Super + w
+- Create tab: Super + t
 - `wezterm ls-fonts` - view all fonts
 - `wezterm ls-fonts --list-system` shows that + all available fonts
 
@@ -194,6 +195,9 @@ NEOVIM Bloody https://patorjk.com/software/taag/#p=display&v=0&f=Bloody&t=NEOVIM
 https://www.youtube.com/watch?v=H70lULWJeig
 
 https://www.youtube.com/watch?v=wNQpDWLs4To
+
+
+`brew install tmux`
 
 # more wezterm stuff
 
