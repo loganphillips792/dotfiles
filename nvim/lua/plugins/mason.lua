@@ -1,60 +1,42 @@
 return {
-    "mason-org/mason.nvim",
-    dependencies = {
-      "mason-org/mason-lspconfig.nvim",
-      -- "WhoIsSethDaniel/mason-tool-installer.nvim",
-    }, 
+  "mason-org/mason.nvim",
+  dependencies = {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  },
 
-    config = function()
-        
-        -- import mason-lspconfig
-        local mason_lspconfig = require("mason-lspconfig")
-        -- local mason_tool_installer = require("mason-tool-installer")
+  config = function()
+    require("mason").setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
 
-        require("mason").setup({
-
-            ui = {
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗"
-                }
-            }
-        })
-        mason_lspconfig.setup({
-          -- list of servers for mason to install
-          ensure_installed = {
-            -- "tsserver",
-            "html",
-            "cssls",
-            "tailwindcss",
-            "lua_ls",
-            "graphql",
-            "gopls",
-            -- "bufls",
-            "emmet_ls",
-            "prismals",
-            "pyright",
-            "templ",
-          },
-          -- auto-install configured servers (with lspconfig)
-          automatic_installation = true, -- not the same as ensure_installed
-        })
-
-        --[[
-        mason_tool_installer.setup({
-          ensure_installed = {
-            "prettier", -- prettier formatter
-            "stylua", -- lua formatter
-            "isort", -- python formatter
-            "black", -- python formatter
-            "debugpy", -- python debugger
-            "golines", -- go formatter
-            "templ",
-            "pylint", -- python linter
-            "eslint_d", -- js linter
-          },
-        }) --]]
-
-    end
+    require("mason-tool-installer").setup({
+      ensure_installed = {
+        -- LSP servers
+        "html-lsp",
+        "css-lsp",
+        "tailwindcss-language-server",
+        "lua-language-server",
+        "graphql-language-service-cli",
+        "gopls",
+        "emmet-ls",
+        "prisma-language-server",
+        "pyright",
+        "templ",
+        -- Formatters/linters (uncomment as needed)
+        -- "prettier",
+        -- "stylua",
+        -- "isort",
+        -- "black",
+        -- "golines",
+        -- "pylint",
+        -- "eslint_d",
+      },
+    })
+  end,
 }
