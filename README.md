@@ -108,6 +108,7 @@ When typing commands (:) start typing and hit <tab> to get auto sugestions
 - lazy.nvim
     - `:Lazy check`
     - `:Lazy update`
+    - `:Lazy sync`
 # VS Code
 
 # Neofetch
@@ -131,6 +132,16 @@ https://www.youtube.com/watch?v=i04sSQjd-qo 7:12
 ## Wez term config
 
 https://github.com/KevinSilvester/wezterm-config?tab=readme-ov-file
+
+
+`brew install font-meslo-lg-nerd-font`
+
+
+- Switch tabs
+    - Super + Shift + [ to go to the previous tab and Super + Shift + ] for the next tab
+- Close current tab: Super + w
+- `wezterm ls-fonts` - view all fonts
+- `wezterm ls-fonts --list-system` shows that + all available fonts
 
 ## Status Line
 

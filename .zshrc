@@ -14,6 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Plugins
 
 # git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # source ~/zshrc-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -83,7 +85,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-syntax-highlighting)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)
 
 # adding it as a regular Oh My ZSH! plugin will not work properly
 export PATH="~/zshrc-plugins/zsh-autocomplete/src:$PATH"
@@ -198,3 +200,21 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Add wezterm command to $PATH. So we can run wezterm instead of /Applications/WezTerm.app/Contents/MacOS/wezterm ls-fonts
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# brew install eza zoxide
+alias ls="eza --icons=always"
+
+# --- enable Zoxide (better cd) ---
+# After visiting a directory such as ~/repos/portfolio, later you can just do `cd port`
+eval "$(zoxide init zsh)"
+
+alias cd="z"
