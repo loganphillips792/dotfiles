@@ -13,7 +13,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Plugins
 
-# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+# +# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # source ~/zshrc-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
