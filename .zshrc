@@ -13,9 +13,10 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Plugins
 
-# +# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 # source ~/zshrc-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -85,7 +86,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)
+# bat has to be installed first: brew install bat
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting zsh-bat)
 
 # adding it as a regular Oh My ZSH! plugin will not work properly
 export PATH="~/zshrc-plugins/zsh-autocomplete/src:$PATH"
