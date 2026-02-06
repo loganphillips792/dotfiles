@@ -38,6 +38,8 @@ When you restart your terminal, you should see your Zshr configured properly
 - Zshell plugins: I created a folder `~/zshrc-plugins` and this is where I `git clone` plugins into.
 - I am currently using powerlevel10k theme. View the installation instructions [here](https://github.com/romkatv/powerlevel10k#oh-my-zsh). I followed the instructions for 'Oh My ZSH'. It will take you through the "configuration wizard" in order to configure the theme. Ultimtately installs the configuration at ~/.pk10.zsh. Note, this also uses the "Meslo Nerd Font". View the repo to install this font.
 
+`omz update` - Update
+
 ### git
 
 https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index
