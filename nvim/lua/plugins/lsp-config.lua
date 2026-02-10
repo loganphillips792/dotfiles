@@ -87,6 +87,7 @@ return {
       cssls = {},
       tailwindcss = {},
       prismals = {},
+      vtsls = {},
       pyright = {},
       lua_ls = {
         settings = {

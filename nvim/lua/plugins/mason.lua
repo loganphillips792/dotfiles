@@ -28,6 +28,7 @@ return {
         "prisma-language-server",
         "pyright",
         "templ",
+        "vtsls",
         -- Formatters/linters (uncomment as needed)
         -- "prettier",
         -- "stylua",
