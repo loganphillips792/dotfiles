@@ -27,6 +27,11 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
+-- Jump to window by number
+for i = 1, 9 do
+    vim.keymap.set("n", "<Leader>" .. i, i .. "<C-w>w", { desc = "Move to Window " .. i })
+end
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
