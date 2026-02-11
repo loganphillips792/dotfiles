@@ -204,3 +204,60 @@ https://www.youtube.com/watch?v=wNQpDWLs4To
 # more wezterm stuff
 
 https://www.reddit.com/r/neovim/comments/1edd9yj/my_favorite_terminal_setup_for_neovim_wezterm/
+
+# New Machine Setup
+
+Steps to set up zsh, neovim, and wezterm on a fresh Mac.
+
+## 1. Clone the repo
+
+```
+git clone <your-repo-url> ~/dotfiles
+```
+
+## 2. Install dependencies
+
+```
+brew install neovim jq tmux
+brew install --cask wezterm
+brew install font-meslo-lg-nerd-font
+```
+
+## 3. Install Oh My Zsh + plugins
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Theme:
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+Plugins:
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/fdellwing/zsh-bat.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-bat
+```
+
+zsh-autocomplete (installed separately, not as an oh-my-zsh plugin):
+```
+mkdir -p ~/zshrc-plugins
+git clone https://github.com/marlonrichert/zsh-autocomplete.git ~/zshrc-plugins/zsh-autocomplete
+```
+
+Run `p10k configure` if the configuration wizard doesn't start automatically.
+
+## 4. Create symlinks
+
+```
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/wezterm-config/.wezterm.lua ~/.wezterm.lua
+```
+
+## 5. Open Neovim
+
+Just run `nvim` — lazy.nvim will auto-install all plugins on first launch. Then run `:Mason` to install any LSP servers/formatters you need.
