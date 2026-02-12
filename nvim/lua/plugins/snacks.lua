@@ -12,5 +12,7 @@ return {
   keys = {
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+    { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+    { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
   },
 }
