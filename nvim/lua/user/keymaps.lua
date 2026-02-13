@@ -63,6 +63,36 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- Smart window resize
+
+-- Recursively walks the window layout tree to determine whether the
+-- given window sits inside a "row" (side-by-side) or "col" (stacked) split.
+local function find_parent_type(layout, winid)
+    if layout[1] == "leaf" then return nil end
+    for _, child in ipairs(layout[2]) do
+        if child[1] == "leaf" and child[2] == winid then
+            return layout[1]
+        end
+        local result = find_parent_type(child, winid)
+        if result then return result end
+    end
+    return nil
+end
+
+-- Grows or shrinks the current window by 5 in the correct axis:
+-- width for horizontal splits, height for vertical splits.
+local function smart_resize(grow)
+    local parent = find_parent_type(vim.fn.winlayout(), vim.api.nvim_get_current_win())
+    local sign = grow and '+' or '-'
+    if parent == "row" then
+        vim.cmd('vertical resize ' .. sign .. '5')
+    elseif parent == "col" then
+        vim.cmd('resize ' .. sign .. '5')
+    end
+end
+vim.keymap.set('n', '<leader>m', function() smart_resize(true) end, { desc = 'Expand Current Window' })
+vim.keymap.set('n', '<leader>n', function() smart_resize(false) end, { desc = 'Shrink Current Window' })
+
 -- Toggle wrap
 vim.keymap.set('n', '<leader>w', function()
     vim.opt.wrap = not vim.opt.wrap:get()
