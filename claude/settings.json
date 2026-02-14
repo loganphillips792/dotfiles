@@ -8,8 +8,10 @@
       "Read(*)",
       "Bash"
     ],
+    "ask": [
+      "Bash(rm:*)"
+    ],
     "deny": [
-      "Bash(rm:*)",
       "Bash(mv:*)",
       "Bash(cp:*)",
       "Bash(dd:*)",
