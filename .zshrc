@@ -219,4 +219,5 @@ alias ls="eza --icons=always"
 # After visiting a directory such as ~/repos/portfolio, later you can just do `cd port`
 eval "$(zoxide init zsh)"
 
-alias cd="z"
+# commenting out because with this alias activated, cd autocomplete won't work on folders or files that have not been visited before
+# alias cd="z"

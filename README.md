@@ -139,6 +139,7 @@ https://github.com/KevinSilvester/wezterm-config?tab=readme-ov-file
 `brew install font-meslo-lg-nerd-font`
 
 
+- Super = CMD
 - Switch tabs
     - Super + Shift + [ to go to the previous tab and Super + Shift + ] for the next tab
 - Close current tab: Super + w
@@ -218,7 +219,7 @@ git clone <your-repo-url> ~/dotfiles
 ## 2. Install dependencies
 
 ```
-brew install neovim jq tmux imagemagick lazygit
+brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit
 brew install --cask wezterm
 brew install font-meslo-lg-nerd-font
 ```
@@ -249,15 +250,36 @@ git clone https://github.com/marlonrichert/zsh-autocomplete.git ~/zshrc-plugins/
 
 Run `p10k configure` if the configuration wizard doesn't start automatically.
 
-## 4. Create symlinks
+## 4. Install NVM, Pyenv, and Go (optional)
+
+These are referenced in .zshrc. Install whichever you need:
+
+```
+# NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+# Pyenv (Python Version Manager)
+brew install pyenv
+
+# Go
+brew install go
+```
+
+## 5. Create symlinks
 
 ```
 ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.vimrc ~/.vimrc
+mkdir -p ~/.config
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/wezterm-config/.wezterm.lua ~/.wezterm.lua
+ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+mkdir -p ~/.claude
+ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ```
 
-## 5. Open Neovim
+## 6. Open Neovim
 
 Just run `nvim` — lazy.nvim will auto-install all plugins on first launch. Then run `:Mason` to install any LSP servers/formatters you need.
