@@ -177,6 +177,7 @@ rebasewithmain() {
 }
 
 alias oz="nvim ~/.zshrc"
+alias kb="cd /Volumes/NO_NAME/knowledge_base"
 
 eval $(/opt/homebrew/bin/brew shellenv)
 
