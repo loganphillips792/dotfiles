@@ -7,6 +7,10 @@ return {
     dashboard = { enabled = true },
     explorer = { enabled = true },
     image = { enabled = true },
+    lazygit = {
+      enabled = true,
+      auto_close = false,
+    },
     picker = { enabled = true },
   },
   keys = {
@@ -14,5 +18,6 @@ return {
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+    { "<leader>l", function() Snacks.lazygit.open() end, desc = "Lazygit" },
   },
 }
