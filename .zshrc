@@ -139,12 +139,12 @@ acp(){
 	# The 2>&1 part redirects any error messages (from stderr) to stdout, so both normal output and error messages can be processed by grep
 	# The -q option makes grep operate in "quiet" mode, meaning it won’t output any matched lines; it only returns a success or failure status
 	if git push 2>&1 | grep -q "fatal: The current branch $current_branch has no upstream branch"; then
-        # If the branch has no upstream, push with --set-upstream
-        echo "Setting upstream and pushing..."
-        git push --set-upstream origin "$current_branch"
-    else
+		# If the branch has no upstream, push with --set-upstream
+		echo "Setting upstream and pushing..."
+		git push --set-upstream origin "$current_branch"
+	else
 		git push
-    fi
+	fi
 	echo "Pushed successfully."
 }
 
