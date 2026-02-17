@@ -12,6 +12,8 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
 - `ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json`
 - `ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md`
+- `ln -s ~/dotfiles/claude/skills ~/.claude/skills`
+- `ln -s ~/dotfiles/claude/commands ~/.claude/commands`
 
 # Zshell
 
@@ -280,6 +282,8 @@ ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/s
 mkdir -p ~/.claude
 ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/dotfiles/claude/skills ~/.claude/skills
+ln -s ~/dotfiles/claude/commands ~/.claude/commands
 ```
 
 ## 6. Open Neovim
