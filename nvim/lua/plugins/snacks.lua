@@ -32,7 +32,14 @@ return {
       enabled = true,
       auto_close = false,
     },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      sources = {
+        explorer = {
+          hidden = true,
+        },
+      },
+    },
   },
   keys = {
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
