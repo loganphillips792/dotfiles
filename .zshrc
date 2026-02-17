@@ -127,7 +127,7 @@ acp(){
 	# Check the current branch name
 	current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-	if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ]; then
+	if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ] || [ "$current_branch" = "develop" ]; then
 		echo "Warning: You are on the '$current_branch' branch, Aborting add, commit, and push"
 		return 1
 	fi
