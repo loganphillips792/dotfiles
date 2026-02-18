@@ -43,6 +43,7 @@ Mermaid diagram if 3+ components are involved.
 - Include every meaningful step
 - Keep explanations concise and technically precise
 - If you're uncertain about a connection in the flow, say so
+- Output the entire document as a single markdown code block (```markdown ... ```) so the user can copy it directly
 
 ## Feature to document
 $ARGUMENTS
