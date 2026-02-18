@@ -12,6 +12,8 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
 - `ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json`
 - `ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md`
+- `ln -s ~/dotfiles/claude/skills ~/.claude/skills`
+- `ln -s ~/dotfiles/claude/commands ~/.claude/commands`
 
 # Zshell
 
@@ -34,6 +36,7 @@ When you restart your terminal, you should see your Zshr configured properly
     - ls ~/.oh-my-zsh
 - themes located at .oh-my-zsh/themes
     - for example: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k` (`p10k configure` if configuration wizard does not open after restart)
+- To reinstall: Remove `~/.oh-my-zsh` and then run the install command again
 
 - Any plugins from oh-my-zsh you want to use, add to the plugins=() variable
 - Zshell plugins: I created a folder `~/zshrc-plugins` and this is where I `git clone` plugins into.
@@ -280,6 +283,8 @@ ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/s
 mkdir -p ~/.claude
 ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/dotfiles/claude/skills ~/.claude/skills
+ln -s ~/dotfiles/claude/commands ~/.claude/commands
 ```
 
 ## 6. Open Neovim
