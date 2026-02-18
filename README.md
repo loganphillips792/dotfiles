@@ -144,9 +144,11 @@ https://github.com/KevinSilvester/wezterm-config?tab=readme-ov-file
 
 
 - Super = CMD
+- Toggle fullscreen: Super + Shift + f _(custom)_
 - Switch tabs
     - Super + Shift + [ to go to the previous tab and Super + Shift + ] for the next tab
 - Close current tab: Super + w
+- Open New Window: Super + n
 - Create tab: Super + t
 - `wezterm ls-fonts` - view all fonts
 - `wezterm ls-fonts --list-system` shows that + all available fonts

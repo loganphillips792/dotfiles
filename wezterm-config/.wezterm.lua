@@ -44,6 +44,10 @@ local function apply_background_settings(c)
   }
 end
 
+config.keys = {
+  { key = "f", mods = "CMD|SHIFT", action = wezterm.action.ToggleFullScreen },
+}
+
 -- 4. Execute the functions to populate the config
 apply_size_settings(config)
 apply_theme_settings(config)
