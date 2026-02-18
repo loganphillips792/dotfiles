@@ -36,6 +36,7 @@ When you restart your terminal, you should see your Zshr configured properly
     - ls ~/.oh-my-zsh
 - themes located at .oh-my-zsh/themes
     - for example: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k` (`p10k configure` if configuration wizard does not open after restart)
+- To reinstall: Remove `~/.oh-my-zsh` and then run the install command again
 
 - Any plugins from oh-my-zsh you want to use, add to the plugins=() variable
 - Zshell plugins: I created a folder `~/zshrc-plugins` and this is where I `git clone` plugins into.
