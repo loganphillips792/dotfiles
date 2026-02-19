@@ -176,6 +176,32 @@ rebasewithmain() {
   fi
 }
 
+setup_dev() {
+  local dir="${1:-.}"
+  dir=$(cd "$dir" && pwd) || { echo "Invalid directory: $1"; return 1; }
+  SESSION="dev"
+
+  tmux has-session -t $SESSION 2>/dev/null
+
+  if [ $? != 0 ]; then
+    # Window 1: Claude Code (left) | Neovim (right)
+    tmux new-session -d -s $SESSION -n "Claude + Neovim" -c "$dir"
+    tmux split-window -h -p 50 -t $SESSION:0 -c "$dir"
+    tmux send-keys -t $SESSION:0.0 "claude" C-m
+    tmux send-keys -t $SESSION:0.1 "nvim" C-m
+
+    # Window 2: Docker (top) | Terminal (bottom)
+    tmux new-window -t $SESSION -n "Docker + Terminal" -c "$dir"
+    tmux split-window -v -p 50 -t $SESSION:1 -c "$dir"
+
+    # Focus on Editor window, Neovim pane
+    tmux select-window -t $SESSION:0
+    tmux select-pane -t $SESSION:0.1
+  fi
+
+  tmux attach-session -t $SESSION
+}
+
 alias oz="nvim ~/.zshrc"
 alias kb="cd /Volumes/NO_NAME/knowledge_base"
 
