@@ -135,24 +135,6 @@ https://www.josean.com/posts/neovim-linting-and-formatting
 
 https://www.youtube.com/watch?v=i04sSQjd-qo 7:12
 
-## Wez term config
-
-https://github.com/KevinSilvester/wezterm-config?tab=readme-ov-file
-
-
-`brew install font-meslo-lg-nerd-font`
-
-
-- Super = CMD
-- Toggle fullscreen: Super + Shift + f _(custom)_
-- Switch tabs
-    - Super + Shift + [ to go to the previous tab and Super + Shift + ] for the next tab
-- Close current tab: Super + w
-- Open New Window: Super + n
-- Create tab: Super + t
-- `wezterm ls-fonts` - view all fonts
-- `wezterm ls-fonts --list-system` shows that + all available fonts
-
 ## Status Line
 
 https://github.com/nvim-lualine/lualine.nvim
@@ -208,10 +190,6 @@ https://www.youtube.com/watch?v=wNQpDWLs4To
 
 `brew install tmux`
 
-# more wezterm stuff
-
-https://www.reddit.com/r/neovim/comments/1edd9yj/my_favorite_terminal_setup_for_neovim_wezterm/
-
 # New Machine Setup
 
 Steps to set up zsh, neovim, and wezterm on a fresh Mac.
@@ -225,7 +203,7 @@ git clone <your-repo-url> ~/dotfiles
 ## 2. Install dependencies
 
 ```
-brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger
+brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep
 brew install --cask wezterm
 brew install font-meslo-lg-nerd-font
 ```
