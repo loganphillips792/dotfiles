@@ -194,6 +194,10 @@ setup_dev() {
     tmux new-window -t $SESSION -n "Docker + Terminal" -c "$dir"
     tmux split-window -v -p 50 -t $SESSION:1 -c "$dir"
 
+    # Window 3: Neovim Full Screen
+    tmux new-window -t $SESSION -n "Neovim Full Screen" -c "$dir"
+    tmux send-keys -t $SESSION:2 "nvim" C-m
+
     # Focus on Editor window, Neovim pane
     tmux select-window -t $SESSION:0
     tmux select-pane -t $SESSION:0.1
