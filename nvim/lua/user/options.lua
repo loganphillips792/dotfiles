@@ -32,6 +32,10 @@ o.numberwidth = 4                         -- set number column width to 2 {defau
 o.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 o.wrap = false                            -- display lines as one long line
 o.scrolloff = 8                           -- is one of my fav
+o.foldcolumn = "1"                        -- show fold indicators in gutter
+o.foldlevel = 99                          -- start with all folds open
+o.foldlevelstart = 99
+o.foldenable = true
 o.sidescrolloff = 8
 o.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
