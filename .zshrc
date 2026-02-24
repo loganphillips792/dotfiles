@@ -184,23 +184,19 @@ setup_dev() {
   tmux has-session -t $SESSION 2>/dev/null
 
   if [ $? != 0 ]; then
-    # Window 1: Claude Code (left) | Neovim (right)
-    tmux new-session -d -s $SESSION -n "Claude + Neovim" -c "$dir"
+    # Window 1: Claude Code (left) | Docker (top-right) + Terminal (bottom-right)
+    tmux new-session -d -s $SESSION -n "Claude Code + Docker + Terminal" -c "$dir"
     tmux split-window -h -p 50 -t $SESSION:0 -c "$dir"
+    tmux split-window -v -p 50 -t $SESSION:0.1 -c "$dir"
     tmux send-keys -t $SESSION:0.0 "claude" C-m
-    tmux send-keys -t $SESSION:0.1 "nvim" C-m
 
-    # Window 2: Docker (top) | Terminal (bottom)
-    tmux new-window -t $SESSION -n "Docker + Terminal" -c "$dir"
-    tmux split-window -v -p 50 -t $SESSION:1 -c "$dir"
+    # Window 2: Neovim Full Screen
+    tmux new-window -t $SESSION -n "Neovim" -c "$dir"
+    tmux send-keys -t $SESSION:1 "nvim" C-m
 
-    # Window 3: Neovim Full Screen
-    tmux new-window -t $SESSION -n "Neovim Full Screen" -c "$dir"
-    tmux send-keys -t $SESSION:2 "nvim" C-m
-
-    # Focus on Editor window, Neovim pane
+    # Focus on Claude pane
     tmux select-window -t $SESSION:0
-    tmux select-pane -t $SESSION:0.1
+    tmux select-pane -t $SESSION:0.0
   fi
 
   tmux attach-session -t $SESSION
