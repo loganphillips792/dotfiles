@@ -6,7 +6,8 @@
   "permissions": {
     "allow": [
       "Read(*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(ls:*)"
     ],
     "ask": [
       "Bash(rm:*)"
