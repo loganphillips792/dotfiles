@@ -27,6 +27,7 @@ return {
         "emmet-ls",
         "prisma-language-server",
         "pyright",
+        "ruff",
         "templ",
         "vtsls",
         -- Formatters/linters (uncomment as needed)
