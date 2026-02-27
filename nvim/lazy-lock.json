@@ -7,6 +7,7 @@
   "csvview.nvim": { "branch": "main", "commit": "7022e18a0fbae9aecf99a3ba02b2a541edc2b8a1" },
   "dirbuf.nvim": { "branch": "main", "commit": "ac7ad3c8e61630d15af1f6266441984f54f54fd2" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
+  "grug-far.nvim": { "branch": "main", "commit": "275dbedc96e61a6b8d1dfb28ba51586ddd233dcf" },
   "gruvbox-material": { "branch": "master", "commit": "790afe9dd085aa04eccd1da3626c5fa05c620e53" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "lazydev.nvim": { "branch": "main", "commit": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d" },
