@@ -71,6 +71,43 @@ return {
         opts.desc = "Show documentation for what is under cursor"
         keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
+        opts.desc = "Peek definition in floating window"
+        keymap.set("n", "gpd", function()
+          local params = vim.lsp.util.make_position_params()
+          vim.lsp.buf_request(0, "textDocument/definition", params, function(_, result)
+            if result == nil or vim.tbl_isempty(result) then
+              return
+            end
+            local def = vim.islist(result) and result[1] or result
+            local uri = def.uri or def.targetUri
+            local range = def.range or def.targetSelectionRange
+            local bufnr = vim.uri_to_bufnr(uri)
+            vim.fn.bufload(bufnr)
+
+            local width = math.floor(vim.o.columns * 0.8)
+            local height = math.floor(vim.o.lines * 0.8)
+            local win = vim.api.nvim_open_win(bufnr, true, {
+              relative = "editor",
+              width = width,
+              height = height,
+              row = math.floor((vim.o.lines - height) / 2),
+              col = math.floor((vim.o.columns - width) / 2),
+              style = "minimal",
+              border = "rounded",
+            })
+
+            vim.api.nvim_win_set_cursor(win, { range.start.line + 1, range.start.character })
+
+            -- q closes the float (only when in a floating window)
+            keymap.set("n", "q", function()
+              local cfg = vim.api.nvim_win_get_config(vim.api.nvim_get_current_win())
+              if cfg.relative ~= "" then
+                vim.api.nvim_win_close(vim.api.nvim_get_current_win(), true)
+              end
+            end, { buffer = bufnr })
+          end)
+        end, opts)
+
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
