@@ -22,7 +22,7 @@ return {
       sections = {
         { section = "header" },
         { section = "keys", gap = 1, padding = 1 },
-        { section = "terminal", cmd = "asciiquarium -t", height = 10, width = 80, ttl = 0, padding = 1 },
+        -- { section = "terminal", cmd = "asciiquarium -t", height = 10, width = 80, ttl = 0, padding = 1 },
         { section = "startup" },
       },
     },

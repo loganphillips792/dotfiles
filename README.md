@@ -125,6 +125,9 @@ When typing commands (:) start typing and hit <tab> to get auto sugestions
 
 https://github.com/LunarVim/Neovim-from-scratch/blob/02-keymaps/lua/user/keymaps.lua
 
+https://www.reddit.com/r/neovim/comments/1rhxmyz/show_off_your_neovim_with_a_screensaver_matrix/
+
+
 ## keybinds custom 
 
 https://github.com/ray-x/nvim/blob/a1dbd320fd693a9c9c62041eb062dbe2a16ce939/lua/core/commands.lua#L113
