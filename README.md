@@ -207,7 +207,7 @@ git clone <your-repo-url> ~/dotfiles
 ## 2. Install dependencies
 
 ```
-brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep
+brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh
 brew install --cask wezterm
 brew install font-meslo-lg-nerd-font
 ```
