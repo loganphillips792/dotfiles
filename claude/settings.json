@@ -35,5 +35,5 @@
     "skill-creator@claude-plugins-official": true
   },
   "spinnerTipsEnabled": true,
-  "teammateMode": "Split planes"
+  "teammateMode": "Split panes"
 }
