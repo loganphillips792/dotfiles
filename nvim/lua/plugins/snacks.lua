@@ -47,5 +47,6 @@ return {
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
     { "<leader>l", function() Snacks.lazygit.open() end, desc = "Lazygit" },
+    { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
   },
 }
