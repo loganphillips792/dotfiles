@@ -9,9 +9,6 @@
       "Bash(grep:*)",
       "Bash(ls:*)"
     ],
-    "ask": [
-      "Bash(rm:*)"
-    ],
     "deny": [
       "Bash(mv:*)",
       "Bash(cp:*)",
@@ -24,6 +21,9 @@
       "Bash(ssh:*)",
       "Bash(scp:*)",
       "Bash(ftp:*)"
+    ],
+    "ask": [
+      "Bash(rm:*)"
     ]
   },
   "enabledPlugins": {
@@ -31,7 +31,8 @@
     "interface-design@interface-design": true,
     "gopls-lsp@claude-plugins-official": true,
     "prompts.chat@prompts.chat": true,
-    "code-review@claude-plugins-official": true
+    "code-review@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   },
   "spinnerTipsEnabled": true,
   "teammateMode": "Split planes"
