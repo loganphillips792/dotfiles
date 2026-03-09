@@ -11,7 +11,6 @@
     ],
     "deny": [
       "Bash(mv:*)",
-      "Bash(cp:*)",
       "Bash(dd:*)",
       "Bash(sudo:*)",
       "Bash(chmod:*)",
@@ -23,7 +22,8 @@
       "Bash(ftp:*)"
     ],
     "ask": [
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(cp:*)"
     ]
   },
   "enabledPlugins": {
