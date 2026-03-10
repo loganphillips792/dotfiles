@@ -202,6 +202,7 @@ setup_dev() {
   tmux attach-session -t $SESSION
 }
 
+alias reveal="open -R"
 alias oz="nvim ~/.zshrc"
 alias kb="cd /Volumes/NO_NAME/knowledge_base"
 
