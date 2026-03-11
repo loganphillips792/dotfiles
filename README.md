@@ -273,3 +273,12 @@ ln -s ~/dotfiles/claude/agents ~/.claude/agents
 ## 6. Open Neovim
 
 Just run `nvim` — lazy.nvim will auto-install all plugins on first launch. Then run `:Mason` to install any LSP servers/formatters you need.
+
+## 7. Verify setup
+
+Run the setup check script to confirm all packages are installed and symlinks are correct:
+
+```
+chmod +x ~/dotfiles/setup.sh
+./setup.sh
+```
