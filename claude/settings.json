@@ -8,10 +8,23 @@
       "Read(*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "Bash(find:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git show:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [
+      "Bash(find *-exec*)",
       "Bash(mv:*)",
+      "Bash(aws:*)",
+      "Bash(kubectl:*)",
+      "Bash(tsh:*)",
       "Bash(dd:*)",
       "Bash(sudo:*)",
       "Bash(chmod:*)",
@@ -24,7 +37,8 @@
     ],
     "ask": [
       "Bash(rm:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(brew:*)"
     ]
   },
   "enabledPlugins": {
