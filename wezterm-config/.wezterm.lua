@@ -47,6 +47,9 @@ end
 config.keys = {
   { key = "f", mods = "CMD|SHIFT", action = wezterm.action.ToggleFullScreen },
   { key = "k", mods = "CMD", action = wezterm.action.ClearScrollback("ScrollbackAndViewport") },
+  { key = "!", mods = "CTRL|SHIFT", action = wezterm.action_callback(function(win, pane)
+    local tab, window = pane:move_to_new_window()
+  end) },
 }
 
 -- 4. Execute the functions to populate the config
