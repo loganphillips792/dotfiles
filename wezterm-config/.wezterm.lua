@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font_size = 15.0 -- Adjusted from 190 (which is massive!)
 config.enable_tab_bar = true
-config.window_background_opacity = 0.9
+-- config.window_background_opacity = 0.9
 config.macos_window_background_blur = 10
 
 config.colors = {
@@ -36,11 +36,21 @@ local function apply_theme_settings(c)
 end
 
 local function apply_background_settings(c)
-  c.window_background_image = '/Users/logan/dotfiles/wezterm-config/backgrounds/image.jpg'
-  c.window_background_image_hsb = {
-    brightness = 0.3, -- Un-commented this for better readability
-    hue = 1.0,
-    saturation = 1.0, -- Fixed typo: "saturdation" -> "saturation"
+  c.background = {
+    -- Base layer: your solid background color
+    {
+      source = { Color = "#011423" },
+      width = "100%",
+      height = "100%",
+    },
+    -- Image layer on top, with reduced opacity so it doesn't wash out text
+    {
+      source = { File = '/Users/logan/dotfiles/wezterm-config/backgrounds/saturn-bg-wallpaper-background-removed.png' },
+      hsb = { brightness = 0.3 },
+      opacity = 0.3,
+      horizontal_align = "Center",
+      vertical_align = "Middle",
+    },
   }
 end
 
