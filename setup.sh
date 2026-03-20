@@ -27,12 +27,15 @@ check_packages() {
     fi
   done
 
-  # Cask
-  if brew list --cask wezterm &>/dev/null; then
-    pass "wezterm (cask)"
-  else
-    fail "wezterm not installed (brew install --cask wezterm)"
-  fi
+  # Casks
+  local brew_casks=(wezterm mactex skim)
+  for cask in "${brew_casks[@]}"; do
+    if brew list --cask "$cask" &>/dev/null; then
+      pass "$cask (cask)"
+    else
+      fail "$cask not installed (brew install --cask $cask)"
+    fi
+  done
 
   # Font
   if brew list --cask font-meslo-lg-nerd-font &>/dev/null; then
