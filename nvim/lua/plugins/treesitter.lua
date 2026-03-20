@@ -52,6 +52,7 @@ return
         "xml",
         "yaml",
         "go",
+        "latex",
       },
       incremental_selection = {
         enable = true,

@@ -207,7 +207,7 @@ git clone <your-repo-url> ~/dotfiles
 
 ```
 brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh
-brew install --cask wezterm
+brew install --cask wezterm mactex skim
 brew install font-meslo-lg-nerd-font
 ```
 

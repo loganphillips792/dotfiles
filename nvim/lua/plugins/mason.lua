@@ -30,6 +30,7 @@ return {
         "ruff",
         "templ",
         "vtsls",
+        "texlab",
         -- Formatters/linters (uncomment as needed)
         -- "prettier",
         -- "stylua",
