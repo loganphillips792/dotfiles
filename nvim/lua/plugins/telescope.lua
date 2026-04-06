@@ -8,6 +8,9 @@ return
     config = function()
       require('telescope').setup({
         pickers = {
+          find_files = {
+            hidden = true,
+          },
           live_grep = {
             layout_config = { preview_cutoff = 0 },
           },
