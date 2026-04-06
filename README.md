@@ -14,6 +14,7 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md`
 - `ln -s ~/dotfiles/claude/skills ~/.claude/skills`
 - `ln -s ~/dotfiles/claude/agents ~/.claude/agents`
+- `ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json`
 
 # Zshell
 
@@ -268,6 +269,7 @@ ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -s ~/dotfiles/claude/skills ~/.claude/skills
 ln -s ~/dotfiles/claude/agents ~/.claude/agents
+ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 ```
 
 ## 6. Open Neovim

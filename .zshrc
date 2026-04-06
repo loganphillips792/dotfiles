@@ -249,3 +249,6 @@ eval "$(zoxide init zsh)"
 
 # commenting out because with this alias activated, cd autocomplete won't work on folders or files that have not been visited before
 # alias cd="z"
+
+# opencode
+export PATH=/Users/logan/.opencode/bin:$PATH
