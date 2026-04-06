@@ -12,7 +12,7 @@ set splitbelow
 " Required for theme
 set termguicolors
 
-colorscheme miramare
+" colorscheme miramare
 
 " Start NERDTree and put the cursor back in the other window
 " autocmd VimEnter * NERDTree | wincmd p
