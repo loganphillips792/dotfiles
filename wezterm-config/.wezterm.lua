@@ -4,7 +4,10 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- 2. Set global/simple properties directly
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
+config.font = wezterm.font_with_fallback({
+	"Dank Mono",
+	"MesloLGS Nerd Font Mono",
+})
 config.font_size = 15.0 -- Adjusted from 190 (which is massive!)
 config.enable_tab_bar = true
 -- config.window_background_opacity = 0.9

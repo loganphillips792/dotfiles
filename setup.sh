@@ -37,11 +37,25 @@ check_packages() {
     fi
   done
 
-  # Font
+  # Fonts
   if brew list --cask font-meslo-lg-nerd-font &>/dev/null; then
     pass "font-meslo-lg-nerd-font"
   else
     fail "font-meslo-lg-nerd-font not installed (brew install font-meslo-lg-nerd-font)"
+  fi
+
+  # Dank Mono (installed from dotfiles/fonts/)
+  local dank_mono_installed=true
+  for f in "DankMono-Regular.otf" "DankMono-Bold.otf" "DankMono-Italic.otf"; do
+    if [[ ! -f "$HOME/Library/Fonts/$f" ]]; then
+      dank_mono_installed=false
+      break
+    fi
+  done
+  if $dank_mono_installed; then
+    pass "Dank Mono"
+  else
+    fail "Dank Mono not installed (run: cp \"\$DOTFILES/fonts/Dank Mono/\"*.otf ~/Library/Fonts/)"
   fi
 
   # Oh My Zsh
