@@ -184,11 +184,12 @@ setup_dev() {
   tmux has-session -t $SESSION 2>/dev/null
 
   if [ $? != 0 ]; then
-    # Window 1: Claude Code (left) | Docker (top-right) + Terminal (bottom-right)
-    tmux new-session -d -s $SESSION -n "Claude Code + Docker + Terminal" -c "$dir"
+    # Window 1: Claude Code (top-left) + Terminal (bottom-left) | Neovim (right)
+    tmux new-session -d -s $SESSION -n "Claude Code + Terminal + Neovim" -c "$dir"
     tmux split-window -h -p 50 -t $SESSION:0 -c "$dir"
-    tmux split-window -v -p 50 -t $SESSION:0.1 -c "$dir"
+    tmux split-window -v -p 50 -t $SESSION:0.0 -c "$dir"
     tmux send-keys -t $SESSION:0.0 "claude" C-m
+    tmux send-keys -t $SESSION:0.2 "nvim" C-m
 
     # Window 2: Neovim Full Screen
     tmux new-window -t $SESSION -n "Neovim" -c "$dir"
