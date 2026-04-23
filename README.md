@@ -276,7 +276,26 @@ ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 
 Just run `nvim` — lazy.nvim will auto-install all plugins on first launch. Then run `:Mason` to install any LSP servers/formatters you need.
 
-## 7. Verify setup
+## 7. Set up GitHub CLI (gh)
+
+`gh` is installed via brew in step 2. Authenticate it so Claude Code has access to Github:
+
+```
+gh auth login
+```
+
+Follow the prompts:
+- Select `GitHub.com`
+- Choose `HTTPS` or `SSH` as your preferred protocol
+- Authenticate via web browser (easiest) or paste a personal access token
+
+Verify the login:
+
+```
+gh auth status
+```
+
+## 8. Verify setup
 
 Run the setup check script to confirm all packages are installed and symlinks are correct:
 
