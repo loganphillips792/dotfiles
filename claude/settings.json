@@ -18,6 +18,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git checkout:*)",
+      "Bash(gh api *)",
+      "Bash(gh repo list *)",
       "mcp__grafana__list_datasources",
       "mcp__grafana__list_loki_label_values",
       "mcp__grafana__query_loki_logs",
