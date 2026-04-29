@@ -24,7 +24,12 @@
       "mcp__grafana__query_prometheus"
     ],
     "deny": [
-      "Bash(find *-exec*)",
+      "Bash(find *-exec*)"
+    ],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(cp:*)",
+      "Bash(brew:*)",
       "Bash(mv:*)",
       "Bash(aws:*)",
       "Bash(kubectl:*)",
@@ -38,11 +43,6 @@
       "Bash(ssh:*)",
       "Bash(scp:*)",
       "Bash(ftp:*)"
-    ],
-    "ask": [
-      "Bash(rm:*)",
-      "Bash(cp:*)",
-      "Bash(brew:*)"
     ]
   },
   "enabledPlugins": {
