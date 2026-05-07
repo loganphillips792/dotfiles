@@ -82,7 +82,9 @@ bash --version
 
 # Java
 
-## SDKMAN (recommended, matches `.sdkmanrc`)
+## SDKMAN
+
+Can add a `.sdkmanrc` file to java repo
 
 ```
 curl -s "https://get.sdkman.io" | bash
