@@ -66,6 +66,49 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
  - Enables the use of the z command, which is a tool for jumping to frequently used directories quickly. It keeps track of directories you visit and allows you to navigate to them by typing part of the directory name.
  - Example: If you've visited /usr/local/bin often, typing z bin would quickly take you there.
 
+# Bash
+
+macOS ships with Bash 3.2 (from 2007) due to GPL licensing. To get a modern version, install via Homebrew:
+
+```
+brew install bash
+```
+
+Check the version:
+
+```
+bash --version
+```
+
+# Java
+
+## SDKMAN
+
+Can add a `.sdkmanrc` file to java repo
+
+```
+curl -s "https://get.sdkman.io" | bash
+source ~/.sdkman/bin/sdkman-init.sh
+sdk install java 21.0.3-tem
+```
+
+Then add this to `~/.sdkman/etc/config` so the `.sdkmanrc` auto-applies:
+
+```
+sdkman_auto_env=true
+```
+
+
+```
+which java
+```
+
+Should output something like:
+
+```
+/Users/logan/.sdkman/candidates/java/current/bin/java
+```
+
 # Vim
 
 mkdir -p ~/.vim/pack/plugins/start
