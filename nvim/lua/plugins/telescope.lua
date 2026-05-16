@@ -10,6 +10,7 @@ return
         pickers = {
           find_files = {
             hidden = true,
+            file_ignore_patterns = { "^.git/", "node_modules/" },
           },
           live_grep = {
             layout_config = { preview_cutoff = 0 },
