@@ -14,6 +14,18 @@ return {
         end
       end,
     })
+
+    -- When the explorer is already open, reveal the current file in it
+    -- whenever a real file buffer is shown (e.g. opened from telescope).
+    vim.api.nvim_create_autocmd("BufWinEnter", {
+      callback = function(args)
+        if not (_G.Snacks and Snacks.picker) then return end
+        if Snacks.picker.get({ source = "explorer" })[1] == nil then return end
+        if vim.bo[args.buf].buftype ~= "" then return end
+        if vim.api.nvim_buf_get_name(args.buf) == "" then return end
+        Snacks.explorer.reveal({ buf = args.buf })
+      end,
+    })
   end,
   ---@type snacks.Config
   opts = {
