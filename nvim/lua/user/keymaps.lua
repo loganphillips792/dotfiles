@@ -27,6 +27,9 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
+-- Clear search highlight
+vim.keymap.set("n", "<Esc>", ":nohl<CR>", { silent = true })
+
 -- Jump to window by number
 for i = 1, 9 do
     vim.keymap.set("n", "<Leader>" .. i, i .. "<C-w>w", { desc = "Move to Window " .. i })
