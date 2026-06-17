@@ -18,7 +18,7 @@ ERRORS=0
 check_packages() {
   echo "Checking packages..."
 
-  local brew_packages=(neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh)
+  local brew_packages=(neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole)
   for pkg in "${brew_packages[@]}"; do
     if brew list "$pkg" &>/dev/null; then
       pass "$pkg"
