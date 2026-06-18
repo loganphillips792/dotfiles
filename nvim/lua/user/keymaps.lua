@@ -100,6 +100,12 @@ end
 vim.keymap.set('n', '<leader>m', function() smart_resize(true) end, { desc = 'Expand Current Window' })
 vim.keymap.set('n', '<leader>n', function() smart_resize(false) end, { desc = 'Shrink Current Window' })
 
+-- Copy absolute path of current file to system clipboard
+vim.keymap.set("n", "<leader>cpp", function()
+    vim.fn.setreg("+", vim.fn.expand("%:p"))
+    vim.notify("Copied: " .. vim.fn.expand("%:p"))
+end, { desc = "Copy file path" })
+
 -- Toggle wrap
 vim.keymap.set('n', '<leader>w', function()
     vim.opt.wrap = not vim.opt.wrap:get()

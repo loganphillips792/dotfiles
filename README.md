@@ -279,6 +279,29 @@ mo purge --paths             # Configure project scan directories
 mo analyze /Volumes          # Analyze external drives only
 ```
 
+# LaTeX
+
+Installed via `brew install --cask mactex` (TeX Live 2026). All tools live at `/Library/TeX/texbin/`, so no extra setup is needed.
+
+This setup uses **latexmk** — that's what the Neovim vimtex config sets as the compiler (`vimtex_compiler_method = "latexmk"`), and the existing `resume.fdb_latexmk` confirms it's what last built the PDF. The file uses only standard packages, so the default **pdfLaTeX** engine is correct (no XeLaTeX/fontspec needed).
+
+Compile from the command line:
+
+```
+latexmk -pdf resume.tex
+```
+
+That runs pdfLaTeX as many times as needed (resolves refs) and writes `resume.pdf`.
+
+Inside Neovim (vimtex), open `resume.tex` and hit `\ll` to compile, `\lv` to view in Skim.
+
+Clean up the aux junk (`.aux .log .out .fls .fdb_latexmk .synctex.gz`) when you're done:
+
+```
+latexmk -c resume.tex     # remove aux files, keep PDF
+latexmk -C resume.tex     # also remove the PDF
+```
+
 # New Machine Setup
 
 Steps to set up zsh, neovim, and wezterm on a fresh Mac.
