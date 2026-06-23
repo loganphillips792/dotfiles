@@ -56,5 +56,6 @@
     "skill-creator@claude-plugins-official": true
   },
   "spinnerTipsEnabled": true,
-  "teammateMode": "tmux"
+  "teammateMode": "tmux",
+  "tui": "fullscreen"
 }
