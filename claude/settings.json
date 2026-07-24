@@ -53,9 +53,11 @@
     "gopls-lsp@claude-plugins-official": true,
     "prompts.chat@prompts.chat": true,
     "code-review@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "posthog@claude-plugins-official": true
   },
   "spinnerTipsEnabled": true,
-  "teammateMode": "tmux",
-  "tui": "fullscreen"
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "teammateMode": "tmux"
 }

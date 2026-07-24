@@ -205,6 +205,7 @@ setup_dev() {
 alias reveal="open -R"
 alias oz="nvim ~/.zshrc"
 alias kb="cd /Volumes/NO_NAME/knowledge_base"
+alias wm='cd "/Volumes/[C] Windows 11/Users/logan/repos"'
 
 eval $(/opt/homebrew/bin/brew shellenv)
 
