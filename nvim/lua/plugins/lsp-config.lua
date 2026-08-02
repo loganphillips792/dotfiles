@@ -152,11 +152,7 @@ return {
           },
         },
       },
-      ruff = {
-        init_options = {
-          settings = {},
-        },
-      },
+      ruff = {},
       texlab = {
         settings = {
           texlab = {
