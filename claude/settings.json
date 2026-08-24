@@ -6,6 +6,7 @@
   "permissions": {
     "allow": [
       "Read(*)",
+      "Bash(ssh logan@192.168.1.150:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
       "Bash(sips:*)",
@@ -42,7 +43,6 @@
       "Bash(chown:*)",
       "Bash(curl:*)",
       "Bash(wget:*)",
-      "Bash(ssh:*)",
       "Bash(scp:*)",
       "Bash(ftp:*)"
     ]
@@ -57,7 +57,8 @@
     "posthog@claude-plugins-official": true
   },
   "spinnerTipsEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "tui": "fullscreen",
-  "teammateMode": "tmux"
+  "teammateMode": "tmux",
+  "agentPushNotifEnabled": true
 }
