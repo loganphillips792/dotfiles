@@ -28,12 +28,22 @@ check_packages() {
   done
 
   # Casks
-  local brew_casks=(wezterm mactex skim gcloud-cli)
+  local brew_casks=(wezterm mactex skim)
   for cask in "${brew_casks[@]}"; do
     if brew list --cask "$cask" &>/dev/null; then
       pass "$cask (cask)"
     else
       fail "$cask not installed (brew install --cask $cask)"
+    fi
+  done
+
+  # Optional casks - warn only, not required for a working setup
+  local optional_casks=(gcloud-cli)
+  for cask in "${optional_casks[@]}"; do
+    if brew list --cask "$cask" &>/dev/null; then
+      pass "$cask (cask, optional)"
+    else
+      warn "$cask not installed (optional: only needed for 'gws auth setup'; brew install --cask $cask)"
     fi
   done
 

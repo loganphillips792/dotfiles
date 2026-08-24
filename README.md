@@ -367,8 +367,14 @@ git clone <your-repo-url> ~/dotfiles
 
 ```
 brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole googleworkspace-cli
-brew install --cask wezterm mactex skim gcloud-cli
+brew install --cask wezterm mactex skim
 brew install font-meslo-lg-nerd-font
+```
+
+Optional (`setup.sh` warns rather than fails if it's missing):
+
+```
+brew install --cask gcloud-cli   # 400MB; only needed for `gws auth setup`
 ```
 
 ## 3. Install Oh My Zsh + plugins
