@@ -279,6 +279,57 @@ mo purge --paths             # Configure project scan directories
 mo analyze /Volumes          # Analyze external drives only
 ```
 
+# Google Workspace CLI
+
+CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Binary is `gws`.
+
+`brew install googleworkspace-cli`
+
+```
+gws <service> <resource> [sub-resource] <method> [flags]
+
+gws drive files list --params '{"pageSize": 10}'
+gws drive files get --params '{"fileId": "abc123"}'
+gws sheets spreadsheets get --params '{"spreadsheetId": "..."}'
+gws gmail users messages list --params '{"userId": "me"}'
+gws calendar events list --params '{"calendarId": "primary"}'
+gws schema drive.files.list          # show the schema for a method
+```
+
+Services: `drive`, `sheets`, `gmail`, `calendar`, `docs`, `slides`, `tasks`, `people`, `chat`, `classroom`, `forms`, `keep`, `meet`, `admin-reports`, `script`, `workflow`.
+
+Useful flags:
+
+```
+--params <JSON>      URL/query parameters
+--json <JSON>        request body (POST/PATCH/PUT)
+--upload <PATH>      upload a local file as media content
+--output <PATH>      write binary responses to a file
+--format <FMT>       json (default), table, yaml, csv
+--page-all           auto-paginate, one JSON line per page (NDJSON)
+```
+
+## Auth
+
+First-time setup uses `gcloud` to create the GCP project and OAuth client for you:
+
+```
+gcloud auth login                    # once, opens browser
+gws auth setup                       # creates GCP project + OAuth client
+gws auth setup --dry-run             # preview without making changes
+gws auth setup --project <id>        # use an existing project
+gws auth setup --login               # chain `gws auth login` on success
+gws auth status                      # show current auth state
+gws auth logout                      # clear credentials + token cache
+```
+
+Credentials land in `~/.config/gws/` (`client_secret.json`, `credentials.enc`), keyring-backed.
+
+To skip `gcloud` entirely, supply credentials by env var instead —
+`GOOGLE_WORKSPACE_CLI_TOKEN` (pre-obtained OAuth2 token, highest priority),
+`GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE`, or `GOOGLE_WORKSPACE_CLI_CLIENT_ID` /
+`GOOGLE_WORKSPACE_CLI_CLIENT_SECRET` — then run `gws auth login`.
+
 # LaTeX
 
 Installed via `brew install --cask mactex` (TeX Live 2026). All tools live at `/Library/TeX/texbin/`, so no extra setup is needed.
@@ -315,9 +366,15 @@ git clone <your-repo-url> ~/dotfiles
 ## 2. Install dependencies
 
 ```
-brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole
+brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole googleworkspace-cli
 brew install --cask wezterm mactex skim
 brew install font-meslo-lg-nerd-font
+```
+
+Optional (`setup.sh` warns rather than fails if it's missing):
+
+```
+brew install --cask gcloud-cli   # 400MB; only needed for `gws auth setup`
 ```
 
 ## 3. Install Oh My Zsh + plugins

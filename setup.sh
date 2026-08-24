@@ -18,7 +18,7 @@ ERRORS=0
 check_packages() {
   echo "Checking packages..."
 
-  local brew_packages=(neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole)
+  local brew_packages=(neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole googleworkspace-cli)
   for pkg in "${brew_packages[@]}"; do
     if brew list "$pkg" &>/dev/null; then
       pass "$pkg"
@@ -34,6 +34,16 @@ check_packages() {
       pass "$cask (cask)"
     else
       fail "$cask not installed (brew install --cask $cask)"
+    fi
+  done
+
+  # Optional casks - warn only, not required for a working setup
+  local optional_casks=(gcloud-cli)
+  for cask in "${optional_casks[@]}"; do
+    if brew list --cask "$cask" &>/dev/null; then
+      pass "$cask (cask, optional)"
+    else
+      warn "$cask not installed (optional: only needed for 'gws auth setup'; brew install --cask $cask)"
     fi
   done
 
