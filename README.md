@@ -279,6 +279,40 @@ mo purge --paths             # Configure project scan directories
 mo analyze /Volumes          # Analyze external drives only
 ```
 
+# Google Workspace CLI
+
+CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Binary is `gws`.
+
+`brew install googleworkspace-cli`
+
+```
+gws <service> <resource> [sub-resource] <method> [flags]
+
+gws drive files list --params '{"pageSize": 10}'
+gws drive files get --params '{"fileId": "abc123"}'
+gws sheets spreadsheets get --params '{"spreadsheetId": "..."}'
+gws gmail users messages list --params '{"userId": "me"}'
+gws calendar events list --params '{"calendarId": "primary"}'
+gws schema drive.files.list          # show the schema for a method
+```
+
+Services: `drive`, `sheets`, `gmail`, `calendar`, `docs`, `slides`, `tasks`, `people`, `chat`, `classroom`, `forms`, `keep`, `meet`, `admin-reports`, `script`, `workflow`.
+
+Useful flags:
+
+```
+--params <JSON>      URL/query parameters
+--json <JSON>        request body (POST/PATCH/PUT)
+--upload <PATH>      upload a local file as media content
+--output <PATH>      write binary responses to a file
+--format <FMT>       json (default), table, yaml, csv
+--page-all           auto-paginate, one JSON line per page (NDJSON)
+```
+
+Auth via env vars: `GOOGLE_WORKSPACE_CLI_TOKEN` (pre-obtained OAuth2 token, highest priority),
+`GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE`, or `GOOGLE_WORKSPACE_CLI_CLIENT_ID` /
+`GOOGLE_WORKSPACE_CLI_CLIENT_SECRET` with `gws auth login`.
+
 # LaTeX
 
 Installed via `brew install --cask mactex` (TeX Live 2026). All tools live at `/Library/TeX/texbin/`, so no extra setup is needed.
@@ -315,7 +349,7 @@ git clone <your-repo-url> ~/dotfiles
 ## 2. Install dependencies
 
 ```
-brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole
+brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole googleworkspace-cli
 brew install --cask wezterm mactex skim
 brew install font-meslo-lg-nerd-font
 ```
