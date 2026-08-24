@@ -28,7 +28,7 @@ check_packages() {
   done
 
   # Casks
-  local brew_casks=(wezterm mactex skim)
+  local brew_casks=(wezterm mactex skim gcloud-cli)
   for cask in "${brew_casks[@]}"; do
     if brew list --cask "$cask" &>/dev/null; then
       pass "$cask (cask)"

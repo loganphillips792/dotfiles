@@ -309,9 +309,26 @@ Useful flags:
 --page-all           auto-paginate, one JSON line per page (NDJSON)
 ```
 
-Auth via env vars: `GOOGLE_WORKSPACE_CLI_TOKEN` (pre-obtained OAuth2 token, highest priority),
+## Auth
+
+First-time setup uses `gcloud` to create the GCP project and OAuth client for you:
+
+```
+gcloud auth login                    # once, opens browser
+gws auth setup                       # creates GCP project + OAuth client
+gws auth setup --dry-run             # preview without making changes
+gws auth setup --project <id>        # use an existing project
+gws auth setup --login               # chain `gws auth login` on success
+gws auth status                      # show current auth state
+gws auth logout                      # clear credentials + token cache
+```
+
+Credentials land in `~/.config/gws/` (`client_secret.json`, `credentials.enc`), keyring-backed.
+
+To skip `gcloud` entirely, supply credentials by env var instead —
+`GOOGLE_WORKSPACE_CLI_TOKEN` (pre-obtained OAuth2 token, highest priority),
 `GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE`, or `GOOGLE_WORKSPACE_CLI_CLIENT_ID` /
-`GOOGLE_WORKSPACE_CLI_CLIENT_SECRET` with `gws auth login`.
+`GOOGLE_WORKSPACE_CLI_CLIENT_SECRET` — then run `gws auth login`.
 
 # LaTeX
 
@@ -350,7 +367,7 @@ git clone <your-repo-url> ~/dotfiles
 
 ```
 brew install neovim jq tmux imagemagick eza zoxide bat asciiquarium lazygit fzf ranger ripgrep gh mole googleworkspace-cli
-brew install --cask wezterm mactex skim
+brew install --cask wezterm mactex skim gcloud-cli
 brew install font-meslo-lg-nerd-font
 ```
 
