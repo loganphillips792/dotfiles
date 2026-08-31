@@ -311,19 +311,31 @@ Useful flags:
 
 ## Auth
 
-First-time setup uses `gcloud` to create the GCP project and OAuth client for you:
+Two separate credential stores. `gcloud` is a **one-time bootstrap on a new machine** — it
+creates the GCP project and OAuth client. Day to day you only ever run `gws auth login`.
+
+**First machine only** (skip if `~/.config/gws/client_secret.json` already exists):
 
 ```
-gcloud auth login                    # once, opens browser
+gcloud auth login                    # opens browser; Cloud control plane only
 gws auth setup                       # creates GCP project + OAuth client
 gws auth setup --dry-run             # preview without making changes
 gws auth setup --project <id>        # use an existing project
 gws auth setup --login               # chain `gws auth login` on success
+```
+
+**Every day:**
+
+```
+gws auth login                       # OAuth consent for Workspace scopes
 gws auth status                      # show current auth state
 gws auth logout                      # clear credentials + token cache
 ```
 
 Credentials land in `~/.config/gws/` (`client_secret.json`, `credentials.enc`), keyring-backed.
+`gws auth login` reuses the existing `client_secret.json`, so gcloud is not in the path of any
+`gws` command — it's only needed again on a fresh machine, or if you delete that file and re-run
+`gws auth setup`.
 
 To skip `gcloud` entirely, supply credentials by env var instead —
 `GOOGLE_WORKSPACE_CLI_TOKEN` (pre-obtained OAuth2 token, highest priority),
