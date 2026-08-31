@@ -337,6 +337,64 @@ Credentials land in `~/.config/gws/` (`client_secret.json`, `credentials.enc`), 
 `gws` command — it's only needed again on a fresh machine, or if you delete that file and re-run
 `gws auth setup`.
 
+### Which project / account am I on?
+
+```
+gcloud config get-value project      # just the project id
+gcloud config list                   # project + active account + config name
+gcloud auth list                     # which accounts are credentialed, * = active
+gcloud projects list                 # every project the account can see
+```
+
+Change with `gcloud config set project <id>` / `gcloud config set account <email>`.
+
+These report **gcloud's** state only. `gws` ignores the active gcloud project — it reads
+`project_id` and the client ID/secret straight out of `~/.config/gws/client_secret.json`, so
+switching projects in gcloud does not repoint `gws`. Use `gws auth status` for what `gws` is on.
+
+### Moving `gws` to a fresh project
+
+Create and migrate **before** deleting anything — the old project holds the OAuth client that
+`client_secret.json` points at, so deleting it first breaks `gws` immediately.
+
+```
+# 1. create (ids are globally unique, 6-30 chars, must start with a letter)
+gcloud projects create claude-work-8f21 --name="Claude Work"
+gcloud config set project claude-work-8f21
+
+# 2. repoint gws — enables the Workspace APIs and mints a new OAuth client
+gws auth setup --project claude-work-8f21 --login
+
+# 3. verify BEFORE deleting anything
+gws drive files list --params '{"pageSize": 5}'
+
+# 4. only now
+gcloud projects delete <old-project-id>
+```
+
+No billing link is needed for a Workspace-only project — the Drive/Gmail/Sheets APIs run fine
+with `billingEnabled: false`.
+
+Before deleting an old project, check it for forgotten data and live keys:
+
+```
+gcloud services list --enabled --project <id>   # what it was used for
+gcloud billing projects describe <id>           # is it still spending?
+gcloud storage ls --project <id>                # buckets
+bq ls --project_id <id>                         # bigquery datasets
+```
+
+Gotchas:
+
+- Deletion is a **30-day soft delete** (`gcloud projects undelete <id>` reverses it), but the
+  project ID is **reserved forever** — it can never be recreated. Deleted projects still count
+  against the project quota until they are purged.
+- On a personal gmail.com account the OAuth consent screen is "External", and while its
+  publishing status is **Testing**, refresh tokens expire after **7 days** — that's the usual
+  reason `gws` suddenly needs another `gws auth login`. Set the consent screen to
+  "In production" in the Cloud console to stop the weekly re-auth. A new project starts in
+  Testing, so this applies again after every migration.
+
 To skip `gcloud` entirely, supply credentials by env var instead —
 `GOOGLE_WORKSPACE_CLI_TOKEN` (pre-obtained OAuth2 token, highest priority),
 `GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE`, or `GOOGLE_WORKSPACE_CLI_CLIENT_ID` /
