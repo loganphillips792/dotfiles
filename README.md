@@ -309,25 +309,115 @@ Useful flags:
 --page-all           auto-paginate, one JSON line per page (NDJSON)
 ```
 
+### Drive recipes
+
+```
+# newest 100 items, only the fields you care about
+gws drive files list --params '{"pageSize": 100, "orderBy": "modifiedTime desc",
+  "fields": "files(id,name,mimeType,modifiedTime,size)"}'
+
+# everything, as an aligned table
+gws drive files list --params '{"pageSize": 1000, "fields": "files(name,mimeType,modifiedTime,size)"}' \
+  | jq -r '.files[] | [.modifiedTime[0:10], .mimeType, (.size // "-"), .name] | @tsv' \
+  | column -t -s $'\t'
+
+# how many files in total
+gws drive files list --params '{"pageSize": 1000, "fields": "files(id)"}' | jq '.files | length'
+
+# search by name / type / parent folder
+gws drive files list --params "{\"q\": \"name contains 'budget'\"}"
+gws drive files list --params "{\"q\": \"mimeType = 'application/vnd.google-apps.folder'\"}"
+gws drive files list --params "{\"q\": \"'<folderId>' in parents\"}"
+
+# download a file
+gws drive files get --params '{"fileId": "abc123", "alt": "media"}' --output ./out.pdf
+```
+
+Omit `fields` and every response carries the full metadata blob — always pass it.
+
 ## Auth
 
 Two separate credential stores. `gcloud` is a **one-time bootstrap on a new machine** — it
 creates the GCP project and OAuth client. Day to day you only ever run `gws auth login`.
 
-**First machine only** (skip if `~/.config/gws/client_secret.json` already exists):
+Current project: `logan-claude-project-2`.
+
+### From scratch on a new machine
+
+Skip to step 5 if `~/.config/gws/client_secret.json` already exists — it carries the project id
+and the OAuth client, so none of the bootstrap applies.
+
+**1. Install both CLIs**
 
 ```
-gcloud auth login                    # opens browser; Cloud control plane only
-gws auth setup                       # creates GCP project + OAuth client
+brew install googleworkspace-cli
+brew install --cask gcloud-cli       # 400MB; only needed for this bootstrap
+```
+
+**2. Log into the Cloud control plane**
+
+```
+gcloud auth login                    # opens browser
+```
+
+This lets gcloud create projects and enable APIs. It grants **no** Drive/Gmail access — that is
+a separate consent in step 5.
+
+**3. Create the project + OAuth client**
+
+```
+gws auth setup                       # new GCP project + OAuth client
+gws auth setup --project <id>        # or reuse an existing project
 gws auth setup --dry-run             # preview without making changes
-gws auth setup --project <id>        # use an existing project
 gws auth setup --login               # chain `gws auth login` on success
 ```
 
-**Every day:**
+`setup` enables the Workspace APIs, configures the consent screen, mints a Desktop-app OAuth
+client, and writes `~/.config/gws/client_secret.json`.
+
+**4. If `setup` stops and hands you console links, do those two steps by hand**
+
+Google doesn't expose consent-screen and OAuth-client creation to the API in every case. Both
+steps are one-time, per project.
+
+*Step A — consent screen* (skip if already configured):
+
+`https://console.cloud.google.com/apis/credentials/consent?project=<PROJECT_ID>`
+
+→ User Type: **External** → save through all screens. On a personal gmail.com account External
+is the only option; add your own address under **Test users**.
+
+*Step B — create an OAuth client:*
+
+`https://console.cloud.google.com/apis/credentials?project=<PROJECT_ID>`
+
+→ **Create Credentials** → **OAuth client ID**
+→ Application type: **Desktop app**
+→ Redirect URI: `http://localhost` — auto-negotiated, nothing to enter manually.
+
+Then paste the new client's **ID** and **secret** back into the waiting `gws auth setup`
+prompt — it writes `~/.config/gws/client_secret.json` for you. No file to download or move.
+
+**5. Grant Workspace access**
 
 ```
-gws auth login                       # OAuth consent for Workspace scopes
+gws auth login                       # browser consent for Drive/Gmail/Calendar/... scopes
+gws auth status                      # confirm project + client id + enabled APIs
+```
+
+**6. Verify end to end**
+
+```
+gws drive files list --params '{"pageSize": 5}'
+```
+
+**7. Stop the weekly re-auth** — flip the consent screen's publishing status from **Testing** to
+**In production** in the Cloud console, or refresh tokens expire every 7 days (see Gotchas).
+
+### Day to day
+
+```
+gws auth login                       # re-consent (only when the token expires)
 gws auth status                      # show current auth state
 gws auth logout                      # clear credentials + token cache
 ```
@@ -364,6 +454,8 @@ gcloud config set project claude-work-8f21
 
 # 2. repoint gws — enables the Workspace APIs and mints a new OAuth client
 gws auth setup --project claude-work-8f21 --login
+#    (if it stops with console links, that's step 4 of the bootstrap above — the
+#     consent screen and OAuth client are per-project and must be redone)
 
 # 3. verify BEFORE deleting anything
 gws drive files list --params '{"pageSize": 5}'
