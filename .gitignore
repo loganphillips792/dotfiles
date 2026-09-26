@@ -9,3 +9,6 @@ nvim/lua/.DS_Store
 *.log
 *.synctex.gz
 *.pdf
+
+# Claude Code account skill sync (auto-generated)
+claude/skills/synced/
