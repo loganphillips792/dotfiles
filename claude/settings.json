@@ -60,5 +60,6 @@
   "effortLevel": "xhigh",
   "tui": "fullscreen",
   "teammateMode": "tmux",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "advisorModel": "fable"
 }
