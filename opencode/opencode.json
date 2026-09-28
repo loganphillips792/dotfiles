@@ -7,6 +7,9 @@
         "qwen3.8:latest": {
           "_launch": true,
           "name": "qwen3.8:latest"
+        },
+        "qwen3.5:9b": {
+          "name": "qwen3.5:9b"
         }
       },
       "name": "Ollama",
