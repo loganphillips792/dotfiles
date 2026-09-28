@@ -118,6 +118,7 @@ check_symlinks() {
     "$HOME/.claude/skills"
     "$HOME/.claude/agents"
     "$HOME/.config/opencode/opencode.json"
+    "$HOME/.config/opencode/cli.json"
   )
 
   local targets=(
@@ -133,6 +134,7 @@ check_symlinks() {
     "$DOTFILES/claude/skills"
     "$DOTFILES/claude/agents"
     "$DOTFILES/opencode/opencode.json"
+    "$DOTFILES/opencode/cli.json"
   )
 
   for i in "${!link_paths[@]}"; do
