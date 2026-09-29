@@ -58,8 +58,8 @@
   },
   "spinnerTipsEnabled": true,
   "effortLevel": "xhigh",
+  "advisorModel": "fable",
   "tui": "fullscreen",
   "teammateMode": "tmux",
-  "agentPushNotifEnabled": true,
-  "advisorModel": "fable"
+  "agentPushNotifEnabled": true
 }
