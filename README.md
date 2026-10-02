@@ -599,6 +599,8 @@ ln -s ~/dotfiles/claude/skills ~/.claude/skills
 ln -s ~/dotfiles/claude/agents ~/.claude/agents
 ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 ln -s ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json
+mkdir -p ~/.pi/agent
+ln -s ~/dotfiles/pi/models.json ~/.pi/agent/models.json
 ```
 
 ## 6. Open Neovim
