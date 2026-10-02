@@ -601,6 +601,7 @@ ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 ln -s ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json
 mkdir -p ~/.pi/agent
 ln -s ~/dotfiles/pi/models.json ~/.pi/agent/models.json
+ln -s ~/dotfiles/pi/extensions ~/.pi/agent/extensions
 ```
 
 ## 6. Open Neovim
