@@ -1,0 +1,7 @@
+{
+  "lastChangelogVersion": "1.0.0",
+  "skills": [
+    "~/dotfiles/claude/skills",
+    "!**/synced/**"
+  ]
+}

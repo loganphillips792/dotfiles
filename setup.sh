@@ -123,6 +123,7 @@ check_symlinks() {
     "$HOME/.pi/agent/extensions"
     "$HOME/.pi/agent/agents"
     "$HOME/.pi/agent/prompts"
+    "$HOME/.pi/agent/settings.json"
   )
 
   local targets=(
@@ -143,6 +144,7 @@ check_symlinks() {
     "$DOTFILES/pi/extensions"
     "$DOTFILES/pi/agents"
     "$DOTFILES/pi/prompts"
+    "$DOTFILES/pi/settings.json"
   )
 
   for i in "${!link_paths[@]}"; do

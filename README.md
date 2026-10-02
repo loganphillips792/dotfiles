@@ -604,6 +604,7 @@ ln -s ~/dotfiles/pi/models.json ~/.pi/agent/models.json
 ln -s ~/dotfiles/pi/extensions ~/.pi/agent/extensions
 ln -s ~/dotfiles/pi/agents ~/.pi/agent/agents
 ln -s ~/dotfiles/pi/prompts ~/.pi/agent/prompts
+ln -s ~/dotfiles/pi/settings.json ~/.pi/agent/settings.json
 ```
 
 ## 6. Open Neovim
