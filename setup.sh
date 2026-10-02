@@ -121,6 +121,8 @@ check_symlinks() {
     "$HOME/.config/opencode/cli.json"
     "$HOME/.pi/agent/models.json"
     "$HOME/.pi/agent/extensions"
+    "$HOME/.pi/agent/agents"
+    "$HOME/.pi/agent/prompts"
   )
 
   local targets=(
@@ -139,6 +141,8 @@ check_symlinks() {
     "$DOTFILES/opencode/cli.json"
     "$DOTFILES/pi/models.json"
     "$DOTFILES/pi/extensions"
+    "$DOTFILES/pi/agents"
+    "$DOTFILES/pi/prompts"
   )
 
   for i in "${!link_paths[@]}"; do
