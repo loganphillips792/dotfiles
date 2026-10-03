@@ -108,6 +108,21 @@ return {
           end)
         end, opts)
 
+        if vim.lsp.get_client_by_id(ev.data.client_id).name == "clangd" then
+          opts.desc = "Switch source/header"
+          keymap.set("n", "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<CR>", opts)
+
+          -- formatting is handled by the clang-format binary via none-ls
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end
+
+        opts.desc = "Format buffer"
+        keymap.set({ "n", "v" }, "<leader>fm", function()
+          vim.lsp.buf.format({ async = true })
+        end, opts)
+
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
@@ -118,12 +133,14 @@ return {
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     vim.diagnostic.config({
+      -- show diagnostic messages at the end of the line (off by default since nvim 0.11)
+      virtual_text = { prefix = "■", spacing = 4 },
       signs = {
         text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN] = " ",
+          [vim.diagnostic.severity.ERROR] = " ",
+          [vim.diagnostic.severity.WARN] = " ",
           [vim.diagnostic.severity.HINT] = "󰠠 ",
-          [vim.diagnostic.severity.INFO] = " ",
+          [vim.diagnostic.severity.INFO] = " ",
         },
       },
     })
@@ -138,6 +155,18 @@ return {
       },
       templ = {},
       gopls = {},
+      clangd = {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders=1",
+        },
+        -- avoid "multiple different client offset_encodings" warning alongside none-ls
+        capabilities = { offsetEncoding = { "utf-16" } },
+      },
       html = {
         filetypes = { "html", "templ" },
       },

@@ -7,6 +7,7 @@ return {
       { "<leader>s", group = "search" },
       { "<leader>f", group = "file" },
       { "<leader>c", group = "code" },
+      { "<leader>b", group = "debug" },
       { "<leader>w", proxy = "<c-w>", group = "windows" },
     },
   },
