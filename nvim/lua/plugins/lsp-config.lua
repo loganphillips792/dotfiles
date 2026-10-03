@@ -132,6 +132,8 @@ return {
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     vim.diagnostic.config({
+      -- show diagnostic messages at the end of the line (off by default since nvim 0.11)
+      virtual_text = { prefix = "■", spacing = 4 },
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = " ",
