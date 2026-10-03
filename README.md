@@ -16,7 +16,7 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/claude/agents ~/.claude/agents`
 - `ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json`
 - `ln -s ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json`
-- `ln -s ~/dotfiles/.clang-format ~/.clang-format` (global C/C++ format style, GNU)
+- `ln -s ~/dotfiles/.clang-format ~/.clang-format` (global C/C++ format style, Google)
 
 # Zshell
 
