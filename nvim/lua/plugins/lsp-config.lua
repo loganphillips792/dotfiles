@@ -112,14 +112,10 @@ return {
           opts.desc = "Switch source/header"
           keymap.set("n", "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<CR>", opts)
 
-          -- format on save with clang-format (bundled in clangd; respects .clang-format)
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = vim.api.nvim_create_augroup("ClangdFormat" .. ev.buf, { clear = true }),
-            buffer = ev.buf,
-            callback = function()
-              vim.lsp.buf.format({ bufnr = ev.buf, name = "clangd" })
-            end,
-          })
+          -- formatting is handled by the clang-format binary via none-ls
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
         end
 
         opts.desc = "Restart LSP"
@@ -161,8 +157,7 @@ return {
           "--clang-tidy",
           "--header-insertion=iwyu",
           "--completion-style=detailed",
-          "--function-arg-placeholders",
-          "--fallback-style=llvm",
+          "--function-arg-placeholders=1",
         },
         -- avoid "multiple different client offset_encodings" warning alongside none-ls
         capabilities = { offsetEncoding = { "utf-16" } },
