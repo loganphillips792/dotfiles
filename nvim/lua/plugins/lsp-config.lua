@@ -108,6 +108,20 @@ return {
           end)
         end, opts)
 
+        if vim.lsp.get_client_by_id(ev.data.client_id).name == "clangd" then
+          opts.desc = "Switch source/header"
+          keymap.set("n", "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<CR>", opts)
+
+          -- format on save with clang-format (bundled in clangd; respects .clang-format)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("ClangdFormat" .. ev.buf, { clear = true }),
+            buffer = ev.buf,
+            callback = function()
+              vim.lsp.buf.format({ bufnr = ev.buf, name = "clangd" })
+            end,
+          })
+        end
+
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
@@ -138,6 +152,19 @@ return {
       },
       templ = {},
       gopls = {},
+      clangd = {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders",
+          "--fallback-style=llvm",
+        },
+        -- avoid "multiple different client offset_encodings" warning alongside none-ls
+        capabilities = { offsetEncoding = { "utf-16" } },
+      },
       html = {
         filetypes = { "html", "templ" },
       },

@@ -24,6 +24,7 @@ return {
         "lua-language-server",
         "graphql-language-service-cli",
         "gopls",
+        "clangd",
         "emmet-ls",
         "prisma-language-server",
         "pyright",
