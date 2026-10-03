@@ -118,6 +118,11 @@ return {
           client.server_capabilities.documentRangeFormattingProvider = false
         end
 
+        opts.desc = "Format buffer"
+        keymap.set({ "n", "v" }, "<leader>fm", function()
+          vim.lsp.buf.format({ async = true })
+        end, opts)
+
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,

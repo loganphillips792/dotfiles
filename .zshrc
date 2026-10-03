@@ -229,6 +229,9 @@ eval "$(pyenv init - zsh)"
 # for claude code - ~/.local/bin/claude
 export PATH="$HOME/.local/bin:$PATH"
 
+# Mason-installed tools (clang-format, clangd, ...) — appended so system binaries win on conflicts
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
+
 # Add wezterm command to $PATH. So we can run wezterm instead of /Applications/WezTerm.app/Contents/MacOS/wezterm ls-fonts
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
