@@ -119,6 +119,11 @@ check_symlinks() {
     "$HOME/.claude/agents"
     "$HOME/.config/opencode/opencode.json"
     "$HOME/.config/opencode/cli.json"
+    "$HOME/.pi/agent/models.json"
+    "$HOME/.pi/agent/extensions"
+    "$HOME/.pi/agent/agents"
+    "$HOME/.pi/agent/prompts"
+    "$HOME/.pi/agent/settings.json"
   )
 
   local targets=(
@@ -132,9 +137,14 @@ check_symlinks() {
     "$DOTFILES/claude/settings.json"
     "$DOTFILES/claude/CLAUDE.md"
     "$DOTFILES/claude/skills"
-    "$DOTFILES/claude/agents"
+    "$DOTFILES/agents"
     "$DOTFILES/opencode/opencode.json"
     "$DOTFILES/opencode/cli.json"
+    "$DOTFILES/pi/models.json"
+    "$DOTFILES/pi/extensions"
+    "$DOTFILES/agents"
+    "$DOTFILES/pi/prompts"
+    "$DOTFILES/pi/settings.json"
   )
 
   for i in "${!link_paths[@]}"; do

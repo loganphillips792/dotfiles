@@ -32,4 +32,8 @@ Also: when adding a command or keybind, update the relevant Knowledge Base file 
 
 ## Claude config (`claude/`)
 
-Symlinked to `~/.claude/`. `claude/CLAUDE.md` is the **global** user instructions file (applies to all projects, not just this repo). `claude/skills/` and `claude/agents/` are symlinked as directories; some skills inside are themselves symlinks to `~/.agents/skills/`.
+Symlinked to `~/.claude/`. `claude/CLAUDE.md` is the **global** user instructions file (applies to all projects, not just this repo). `claude/skills/` is symlinked as a directory; some skills inside are themselves symlinks to `~/.agents/skills/`.
+
+## Shared subagents (`agents/`)
+
+Harness-neutral subagent definitions, symlinked into both `~/.claude/agents` and `~/.pi/agent/agents`. Write them in Claude Code format (`tools: Read, Grep, Glob, Bash`; `model` only as a Claude alias or omitted). Pi's loader (`pi/extensions/subagent/agents.ts`) translates tool names to pi built-ins and ignores Claude model aliases.
