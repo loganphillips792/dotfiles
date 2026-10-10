@@ -16,6 +16,7 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/agents ~/.claude/agents`
 - `ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json`
 - `ln -s ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json`
+- `ln -s ~/dotfiles/.clang-format ~/.clang-format` (global C/C++ format style, Google)
 
 # Zshell
 
@@ -599,6 +600,7 @@ ln -s ~/dotfiles/claude/skills ~/.claude/skills
 ln -s ~/dotfiles/agents ~/.claude/agents
 ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 ln -s ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json
+ln -s ~/dotfiles/.clang-format ~/.clang-format
 mkdir -p ~/.pi/agent
 ln -s ~/dotfiles/pi/models.json ~/.pi/agent/models.json
 ln -s ~/dotfiles/pi/extensions ~/.pi/agent/extensions

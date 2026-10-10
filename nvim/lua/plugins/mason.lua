@@ -24,6 +24,9 @@ return {
         "lua-language-server",
         "graphql-language-service-cli",
         "gopls",
+        "clangd",
+        "clang-format",
+        "codelldb", -- C/C++/Rust debug adapter (used by nvim-dap)
         "emmet-ls",
         "prisma-language-server",
         "pyright",
