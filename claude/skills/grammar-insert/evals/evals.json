@@ -1,0 +1,8 @@
+{
+  "skill_name": "grammar-insert",
+  "evals": [
+    {"id": 1, "prompt": "add this to my grammar notes: Se me quedó el celular en el taxi", "expected_output": "Proposes an existing section (Accidental se or Quedar), adds an English translation, inserts with matching tab indentation, no new headings.", "files": []},
+    {"id": 2, "prompt": "put \"Es tan inteligente como su hermana - She is as smart as her sister\" in Grammar.md", "expected_output": "Nests under the existing '- tan and tanto' bullet in Small things with one tab of indentation.", "files": []},
+    {"id": 3, "prompt": "file these: \"Ojala que no llueva mañana\", \"a medida que crecía, más se parecía a su padre\"", "expected_output": "Two inserts; flags missing accent on Ojalá without changing it; a medida que nested under existing Random Phrases bullet; translations added.", "files": []}
+  ]
+}

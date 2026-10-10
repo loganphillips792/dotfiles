@@ -13,7 +13,7 @@ Since we are changing the deafult location of .zshrc and .vimrc, we need to use 
 - `ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json`
 - `ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md`
 - `ln -s ~/dotfiles/claude/skills ~/.claude/skills`
-- `ln -s ~/dotfiles/claude/agents ~/.claude/agents`
+- `ln -s ~/dotfiles/agents ~/.claude/agents`
 - `ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json`
 - `ln -s ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json`
 
@@ -596,9 +596,15 @@ mkdir -p ~/.claude
 ln -s ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ln -s ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -s ~/dotfiles/claude/skills ~/.claude/skills
-ln -s ~/dotfiles/claude/agents ~/.claude/agents
+ln -s ~/dotfiles/agents ~/.claude/agents
 ln -s ~/dotfiles/opencode/opencode.json ~/.config/opencode/opencode.json
 ln -s ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json
+mkdir -p ~/.pi/agent
+ln -s ~/dotfiles/pi/models.json ~/.pi/agent/models.json
+ln -s ~/dotfiles/pi/extensions ~/.pi/agent/extensions
+ln -s ~/dotfiles/agents ~/.pi/agent/agents
+ln -s ~/dotfiles/pi/prompts ~/.pi/agent/prompts
+ln -s ~/dotfiles/pi/settings.json ~/.pi/agent/settings.json
 ```
 
 ## 6. Open Neovim
