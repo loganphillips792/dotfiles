@@ -526,6 +526,15 @@ Pi 1.1.0 supports OpenRouter out of the box, so you don't need to change `models
 
 Inside pi, run `/login`, choose OpenRouter and paste the key. Pi saves it to `~/.pi/agent/auth.json`. That file isn't symlinked into this repo, so the key won't end up in git.
 
+# OpenCode
+
+## OpenRouter
+
+1. Get an OpenRouter API key from [openrouter.ai/keys](https://openrouter.ai/keys).
+2. Add it to OpenCode. Either of these works:
+   - In a terminal: run `opencode auth login`, choose OpenRouter and paste the key.
+   - Inside the OpenCode TUI: run `/connect` and pick OpenRouter.
+
 # New Machine Setup
 
 Steps to set up zsh, neovim, and wezterm on a fresh Mac.
