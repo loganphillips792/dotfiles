@@ -1,4 +1,6 @@
-@~/dotfiles/ai/AGENTS.md
+## Knowledge Base
+- Root: `/Volumes/NO_NAME/knowledge_base/`
+- Update the relevant knowledge base file when adding new commands or keybinds
 
 ## Context Efficiency
 ### Subagent Discipline
@@ -19,3 +21,7 @@ Don't narrate tool calls ("Let me read the file..." / "Now I'll edit..."). Just 
 Keep explanations proportional to complexity. Simple changes need one sentence, not three paragraphs.
 
 For markdown tables, use the minimum valid separator (`|-|-|` — one hyphen per column). Never use repeated hyphens (`|---|---|`), box-drawing characters (`─`), or padded separators. This saves tokens.
+
+## Tools
+
+- **Jira:** my API token is exported in `~/.zshrc` as `$JIRA_API_TOKEN`. Use that env var when creating tickets. Never print, echo, or hardcode the token.
