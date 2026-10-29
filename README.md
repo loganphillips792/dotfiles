@@ -517,6 +517,14 @@ latexmk -c resume.tex     # remove aux files, keep PDF
 latexmk -C resume.tex     # also remove the PDF
 ```
 
+# Pi
+
+## OpenRouter
+
+Pi 1.1.0 supports OpenRouter out of the box, so you don't need to change `models.json` or anything else in your dotfiles. All it needs is your API key. Get one at [openrouter.ai/keys](https://openrouter.ai/keys), then:
+
+Inside pi, run `/login`, choose OpenRouter and paste the key. Pi saves it to `~/.pi/agent/auth.json`. That file isn't symlinked into this repo, so the key won't end up in git.
+
 # New Machine Setup
 
 Steps to set up zsh, neovim, and wezterm on a fresh Mac.
