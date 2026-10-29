@@ -125,6 +125,9 @@ check_symlinks() {
     "$HOME/.pi/agent/agents"
     "$HOME/.pi/agent/prompts"
     "$HOME/.pi/agent/settings.json"
+    "$HOME/.codex/AGENTS.md"
+    "$HOME/.config/opencode/AGENTS.md"
+    "$HOME/.pi/agent/AGENTS.md"
   )
 
   local targets=(
@@ -147,6 +150,9 @@ check_symlinks() {
     "$DOTFILES/agents"
     "$DOTFILES/pi/prompts"
     "$DOTFILES/pi/settings.json"
+    "$DOTFILES/ai/AGENTS.md"
+    "$DOTFILES/ai/AGENTS.md"
+    "$DOTFILES/ai/AGENTS.md"
   )
 
   for i in "${!link_paths[@]}"; do
