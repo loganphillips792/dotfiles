@@ -260,3 +260,6 @@ export PATH=/Users/logan/.opencode/bin:$PATH
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Untracked secrets (API tokens, e.g. JIRA_*). Never commit this file.
+[[ -f ~/.secrets.zsh ]] && source ~/.secrets.zsh

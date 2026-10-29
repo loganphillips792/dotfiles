@@ -1,6 +1,4 @@
-## Knowledge Base
-- Root: `/Volumes/NO_NAME/knowledge_base/`
-- Update the relevant knowledge base file when adding new commands or keybinds
+@~/dotfiles/ai/AGENTS.md
 
 ## Context Efficiency
 ### Subagent Discipline
